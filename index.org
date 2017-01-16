@@ -1,13 +1,53 @@
-* Teknologi og tema
+#+TITLE: Ting Teodor tenker
+#+AUTHOR: Teodor Heggelund
+#+LANGUAGE: nb_no
+#+OPTIONS: toc:nil num:nil html-postamble:nil
+#+EMAIL: teodor.heggelund@gmail.com
 
-- Innhold i Org. Søkbart, sammenliknbart, tilgjengelig.
+* Velkommen!
+
+Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet!
+
+Tanker bak å ha en blogg:
+- Det kan være en god idé å sette seg ned for å tenke grundig gjennom noe, til
+  den grad at det er nyttig for andre
+- Noen ideer må bare ned med en gang, ellers blir de borte
+- Gamle ideer kan være nyttige
+- ... og ved alt alt sammen er helt åpent, bør jeg da inderlig gjøre en OK jobb
+  -- ellers 
+
+* Abstraher ved behov, ikke før
+
+Abstraksjoner er herlig. Det fyller meg med en god, varm følelse når jeg
+introduserer en god abstraksjon som gjør problemet lettere, og bedre å jobbe
+videre. Og gode, varme følelser er fint, eller hva?
+
+Dette klarer jeg i blant gjøre når jeg programmerer. Er det muilg med en blogg?
+Etter å lest mye fra [[http://www.paulgraham.com][Paul Graham]], ville jeg prøve.
+
+Denne bloggen er ett dokument i org-mode som jeg kompilerer til HTML med den
+innebygde eksport-funksjonen.
+
+Noen fordeler:
+- Dritkjapt; jeg oppfatter ikke at det tar tid.
+- Ukomplisert. Ingen komponenter jeg ikke forstår -- jeg har full kontroll.
+
+Andre ting jeg liker med prosessen:
+- Jeg kan redigere i Org-mode. Org-mode er det nærmeste jeg har kommet slik
+  redigering av tekstdokumenter bør gjøres. Her en en [[https://www.youtube.com/watch?v=SzA2YODtgK4][introduksjonsvideo]].
+
+Teodor, /2017-01-16/.
+
+* Teknologi og tema                                                :noexport:
+
+- Innhold i Org. Søkbart, sammenliknbart, tilgjengelig
 - Presentasjon med minimalt tema
 - TOC til venstre?
   - Ideelt: implementere Org-navigasjon + hjkl i treet.
 
-* Når ikke lenger en person skal gjøre alt
+* Når ikke lenger en person skal gjøre alt                         :noexport:
 
-Delegering er vanskelig:
+Delegering er vaaanskelig:
 
 - Ting blir bra fordi du jobber hard med detaljer
 - Om du "jobber hard med detaljer når du delegerer" vil du drive personene som
@@ -20,7 +60,7 @@ Delegering er vanskelig:
 Intenst ansvar kan gjøre at resultatet blir bra. Det kan også forhindre andre i
 å ønske å bidra.
 
-* Typer eller ikke?
+* Typer eller ikke?                                                :noexport:
 
 Typer er en mulighet for en /meget tett/ feedbackløkke. Denne sikrer konsistens,
 og bidrar til kohesjon og arkitektur.
@@ -33,14 +73,14 @@ bruke).
 
 Clojure: 
 
-* Lærbare grensesnitt
+* Lærbare grensesnitt                                              :noexport:
 
 Bret victor. Mye å hente her?
 
 Gode grensesnitt er lærbare. De eksponerer sin egen mekanikk og oppgave, og lar
 brukeren lære hva som gjelder av kausalitet for det aktuelle problemet.
 
-* La feedback drive utviklingen din
+* La feedback drive utviklingen din                                :noexport:
 
 eller "Hvilken feedbackløkke vil du ha"?
 
@@ -64,7 +104,7 @@ brukergrensesnittet vi lager. Figwheel gjør en veldig god jobb.
 
 Abstrakte problemer er en annen sak. Typer.
 
-* Fryktdreven utvikling
+* Fryktdreven utvikling                                            :noexport:
 
 Frykt gjør at du ikke tør å teste. Frykt gjør at du aldri får tilbakemelding.
 Fryktdreven utvikling er antitesen til feedbackdreven utvikling.
