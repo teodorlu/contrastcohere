@@ -1,0 +1,70 @@
+* Teknologi og tema
+
+- Innhold i Org. Søkbart, sammenliknbart, tilgjengelig.
+- Presentasjon med minimalt tema
+- TOC til venstre?
+  - Ideelt: implementere Org-navigasjon + hjkl i treet.
+
+* Når ikke lenger en person skal gjøre alt
+
+Delegering er vanskelig:
+
+- Ting blir bra fordi du jobber hard med detaljer
+- Om du "jobber hard med detaljer når du delegerer" vil du drive personene som
+  jobber med deg fra vettet.
+  - De gjør en dårligere jobb,
+  - Tar ikke ansvar,
+  - Tar ikke initiativ
+  - ... og du er fremdeles tynget med mental last.
+
+Intenst ansvar kan gjøre at resultatet blir bra. Det kan også forhindre andre i
+å ønske å bidra.
+
+* Typer eller ikke?
+
+Typer er en mulighet for en /meget tett/ feedbackløkke. Denne sikrer konsistens,
+og bidrar til kohesjon og arkitektur.
+
+Fjernes typer, får man mulihet til å designe et friere språk. Jeg er særlig fan
+av Clojure sin HTML-DSL, som er mer behagelig å skrive enn HTML i seg selv.
+
+(Elm gjør et spennende forsøk, og Haskelll/halogen er heller ikke verst å
+bruke).
+
+Clojure: 
+
+* Lærbare grensesnitt
+
+Bret victor. Mye å hente her?
+
+Gode grensesnitt er lærbare. De eksponerer sin egen mekanikk og oppgave, og lar
+brukeren lære hva som gjelder av kausalitet for det aktuelle problemet.
+
+* La feedback drive utviklingen din
+
+eller "Hvilken feedbackløkke vil du ha"?
+
+Jeg har i det syste hatt mye moro med live-programmering i Python. ~live-py~ er
+en utvidelse til Eclipse og Emacs som kjører live-evaluering av kode mens du
+programmerer. Og det går fort. Hvor ofte tester du koden din? Hvor ofte må du
+tenke deg om for hva du egentlig får inn her, og hva du kan gjøre med det?
+Live-py lar deg først definere hva du skal operere på av data, så får du se i
+sanntid hvordan denne dataen snirkler seg gjennom programmet ditt.
+
+<<gif med live-py>>
+
+Hva det egentlig er vi løser som utviklere er ikke alltid så godt definert. Jeg
+jobber med styrkeanalyser, og er heldig her: Hvis svaret mitt er matematisk
+korrekt, er det som regel nyttig. Innen mykere felt er problemet vanskeligere.
+Vi vil tilføre verdi, hva nå enn det skulle si. Da er ikke lenger den
+matematiske definisjonen særlig nyttig, men vi vil heller ha nærhet til
+brukergrensesnittet vi lager. Figwheel gjør en veldig god jobb.
+
+<<gif med Fighweel>>
+
+Abstrakte problemer er en annen sak. Typer.
+
+* Fryktdreven utvikling
+
+Frykt gjør at du ikke tør å teste. Frykt gjør at du aldri får tilbakemelding.
+Fryktdreven utvikling er antitesen til feedbackdreven utvikling.
