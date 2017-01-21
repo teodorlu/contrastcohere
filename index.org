@@ -80,6 +80,32 @@ Bret victor. Mye å hente her?
 Gode grensesnitt er lærbare. De eksponerer sin egen mekanikk og oppgave, og lar
 brukeren lære hva som gjelder av kausalitet for det aktuelle problemet.
 
+Lærbar programmering? Læringsdreven programmering? La andre lære kildekoden din?
+Dokumentajonen skal være en prosess til å forstå resten.
+
+Litt forskjellige vinklinger:
+- Et lærbart grensesnitt er et grensesnitt hvor brukeren automatisk lærer
+  hvordan han kan bruke det uten store steiner i veien.
+  - Kontinuerlig bruk gir kontinuerlig forbedring
+  - Trenger ikke slå opp i ekstern dokuementasjon
+  - Flater ikke ut fordi han ikke har lest dokumentasjonen
+- En lærbar kodebase er
+  - Mulig å komme i gang med relativt fort, ingen enorm inngangsterskel
+  - Når du først er inne
+- Et lærbart miljø gir deg
+  - En mulighet til å bidra tidlig
+  - Kontinuerlig introduksjon til nye temaer, konsepter og ellers taus kunnskap
+  - Lar deg bidra tilbake (fold onto self) når du lærer noe, og denne kunnskapen
+    blir igjen tilgjengelig for andre
+    - Kontroll, frihet og lærbarhet: En wiki gir frihet og lærbarhet, ikke
+      kontroll. Trenger rykte og fellesnevnere. Dust sier noe som er usant?
+      Trekk diskusjonen inn i rett forum. Du kan ikke bare bestemme hvordan ting
+      /er/, det må tas med relevante personer. Trekk info tilbake til "draft";
+      sett state til "diskuteres, er uferdig".
+
+(Notat: fiks "du" / "han" / "vedkommende" -- innfør gjerne konsistens i pronomen
+her.
+
 * La feedback drive utviklingen din                                :noexport:
 
 eller "Hvilken feedbackløkke vil du ha"?
@@ -177,3 +203,37 @@ godt og konsist!
 > Emacs har en læringskurve med skyhøyt takes
 
 Lett å forstå, ikke sant?
+
+* Grad av kjenthet                                                 :noexport:
+
+Merk: Dette handler om konseptet ferdig/uferdig som skala; ikke om
+"ferdigheter"; "ting du kjenner prosedyren for å gjøre".
+
+Kunnskap er under kontinuerlig behandling. Det er viktig å vite hva som er
+fastsatt, som man kan stole på, og hva som er uferdig.
+
+Tradisjonell løsning:
+- Sentral autoritet erklærer hva som er fakta
+- Desentralisert miljø bidrar til "det som mangler" i en stor haug av kunnskap,
+  hvor alt er uferdig som standard.
+
+Dette skalerer ikke. Forslag:
+
+- Alt er artikler.
+- Artikler har en "ferdighetsgrad".
+- Alt starter med "ferdighetsgrad" 0.
+- Når vi reviderer, kan vi øke ferdighetsgrad.
+- Hvem som kan promotere til hvilken ferdighetsgrad kan styres.
+- Revisjoner øker ferdighetsgrad. Kjenthet? Prosent?
+
+Vanskelig å sette kjenthet. Relativ kjenthet? 
+
+Dropp kjenthet som et tall.
+Kjenthet som skala:
+Ukjent -- Vurdert -- Vurdert sterkt -- Kjent.
+Konservativ.
+
+Merk: det er meget vanskelig å si hvilken grad av kjenthet noe har. Men det kan
+brukes til kommunikasjon. "Pass på å ikke gjøre for mye avhengig av dette; er
+ennå ikke helt gjennomtenkt". Vanskelig grensesnitt mot ansvar. Vil ikke ta
+ansvar for dette, så "sier bare at det er ukjent".
