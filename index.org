@@ -118,3 +118,62 @@ Tre ting jeg bryr meg om:
 - Sivilingeniør :: Statikk, elementanalyse, likevekt, ikkelineariteter,
                    dimensjonering av stål og betong
 - Undervisning :: Formidlingsevne; studentassistent, Lær Kidsa Koding
+
+* "Folding onto itself"                                            :noexport:
+
+Konsept med kraft. *Selvdreven feedback-loop*. Selvforsterkenede feedback-loop.
+Resonnans. Kraften av frihet.
+
+Eksempler:
+Programmerere har mer potensial til "selvbretting" enn mange andre yrkesgrupper.
+De har muligheten til å lage sitt eget miljø:
+
+- Programmet du lager former hva som er mulig. Design utvikler seg til å kunne
+  utrrykke ideer. Når du må gjøre noe tungvindt er det alltid mulig å gjøre det
+  smartere. Du kan tilpasse miljøet ditt (kodebasen) til å være utvidbar i den
+  retningen du ønsker.
+- Byggsystem. Det trenger ikke, og bør ikke være manuell klikking involvert for
+  prosedyrer relatert til hva du driver med. Skriver du byggsystemet ditt selv,
+  kan du velge hvordan ting skal skje. Datamodellering -> prosedyremodellering
+- Verktøy. Emacs er kjerneeksempelet. Du kan i tillegg til å modellere og
+  videreutvikle (a) kodebase og (b) byggsystem; videreutvikle (c) editoren din.
+  Sirkelen er full. Nær-religiøsitet er oppnådd.
+
+Ingeniører er mer begrenset i hva de kan gjøre. Verktøyene som brukes er direkte
+begrensende, og motvirker enhver form for selvbretting:
+
+- Ting er de-facto engangs, gjør ditt-gjør datt. De prosedyrene det er mulig å
+  modellere, er mulige /gjennom ekstra arbeid/. GUI-formatet på alt mulig ellers
+  gjør det vanskelig å løse problemer én gang.
+- Ting er skjult. Jeg har de facto ikke muligheten til å se hvordan ting
+  fungerer, og kontrollere hvordan "ting skjer inni". Hvorfor ikke? Ingen god
+  grunn.
+
+  Kontraeksempel: abaqus ved bruk av inputfiler gir mer kontroll enn GUI. Det
+  gir modularitet, og muligheten til å omorganisere, trekke ut felles logikk.
+  Det er imidlertid ikke mulig å modellere /prosedyrer/. Disse er hardkodet.
+  Lekse fra Unix.
+
+Konseptet med bibliotek over rammeverk er nært beslektet. Parsec i Haskell er et
+/bibliotek/ for parsing, og ikke et rammeverk, som lar brukeren /kombinere og
+komponere/ en parser, i stedet for å kreve at paring skal gjøres *akkurat slik*.
+Spacemacs sliter litt med at ting er for tett koblet. Det er vanskelig å forstå
+helheten, selv om det er en meget god helhet. (Dette er ikke krass kritikk av
+Spacemacs, men en anerkjennelse at læring av Spacemacs blir vanskelig. Det er
+imidlertid /mulig/ å forstå hvordan det fungerer, gitt at man klatrer en
+krevende læringskurve.)
+
+* /Utfordrende/ læringskurve, ikke /bratt/ læringskurve            :noexport:
+
+Hva er en bratt læringskurve? For å svare på spørsmålet må vi vite aksene. Er en
+læring og en tid? Er en nytte og en innsats? Hva er x og hva er y? Bruker alle
+det feil?
+
+La oss heller unngå problemet. Når vi snakker om læringskurve, er vi interessert
+i den følelsesmessige prosessen rundt å læring av et tema. Dette kan vi beskrive
+godt og konsist!
+
+> Emacs har en krevende læringskurve
+> Emacs har en læringskurve med skyhøyt takes
+
+Lett å forstå, ikke sant?
