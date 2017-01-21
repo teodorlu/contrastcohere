@@ -108,3 +108,11 @@ Abstrakte problemer er en annen sak. Typer.
 
 Frykt gjør at du ikke tør å teste. Frykt gjør at du aldri får tilbakemelding.
 Fryktdreven utvikling er antitesen til feedbackdreven utvikling.
+
+* Ferdigheter                                                      :noexport:
+
+Tre ting jeg bryr meg om:
+- Informasjonsteknolog :: Utvikling, programmeringsspråk, teknologier
+- Sivilingeniør :: Statikk, elementanalyse, likevekt, ikkelineariteter,
+                   dimensjonering av stål og betong
+- Undervisning :: Formidlingsevne; studentassistent, Lær Kidsa Koding
