@@ -91,6 +91,8 @@ tenke deg om for hva du egentlig får inn her, og hva du kan gjøre med det?
 Live-py lar deg først definere hva du skal operere på av data, så får du se i
 sanntid hvordan denne dataen snirkler seg gjennom programmet ditt.
 
+~SPC m l~!
+
 <<gif med live-py>>
 
 Hva det egentlig er vi løser som utviklere er ikke alltid så godt definert. Jeg
