@@ -437,7 +437,7 @@ Eller -- takk til Javascriptutviklere, som har grepet dagen og gjort verden
 bedre.
 
 Så vi liker å fokusere på det som suger med JavaScript. Eller de gode bitene.
-Her kommer et forsøk på å sette JavaScript i en større sammenheng.
+Her kommer et forsøk på å sette JavaScript i kontekst.
 
 1. Funksjonell programmering
 
