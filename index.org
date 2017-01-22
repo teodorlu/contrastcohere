@@ -6,6 +6,8 @@
 
 * Velkommen!
 
+Teodor, /2017-01-16/.
+
 Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet!
 
 Tanker bak å ha en blogg:
@@ -20,6 +22,8 @@ Jeg svarer på elektronisk post sendt til fornavn punktum etternavn på domenet
 Google bruker til elektronisk post.
 
 * Abstraher ved behov, ikke før
+
+Teodor, /2017-01-16/.
 
 Abstraksjoner er herlig. Det fyller meg med en god, varm følelse når jeg
 introduserer en god abstraksjon som gjør problemet lettere, og bedre å jobbe
@@ -52,8 +56,6 @@ Andre ting jeg liker med prosessen:
 - Jeg kan redigere i Org-mode. Org-mode er det nærmeste jeg har kommet slik
   redigering av tekstdokumenter bør gjøres. Her en en [[https://www.youtube.com/watch?v=SzA2YODtgK4][introduksjonsvideo]] til
   org-mode.
-
-Teodor, /2017-01-16/.
 
 * Hva er rett abstraksjon?                                         :noexport:
 
