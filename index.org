@@ -16,14 +16,30 @@ Tanker bak å ha en blogg:
 - ... og ved alt alt sammen er helt åpent, bør jeg da inderlig gjøre en OK jobb
   -- ellers 
 
+Jeg svarer på elektronisk post sendt til fornavn punktum etternavn på domenet
+Google bruker til elektronisk post.
+
 * Abstraher ved behov, ikke før
 
 Abstraksjoner er herlig. Det fyller meg med en god, varm følelse når jeg
 introduserer en god abstraksjon som gjør problemet lettere, og bedre å jobbe
 videre. Og gode, varme følelser er fint, eller hva?
 
-Dette klarer jeg i blant gjøre når jeg programmerer. Er det muilg med en blogg?
-Etter å lest mye fra [[http://www.paulgraham.com][Paul Graham]], ville jeg prøve.
+Noen ganger skal man ikke abstrahere. For eksempel før man har forstått
+problemet. Hvilket problem prøver jeg å løse med blogg? Hvilken motor skal jeg
+velge? Vet ikke. Har ikke forutsetning til å vite før jeg har produsert innhold.
+Strategi? Produser innhold /først/, abstraher ved behov. (Analogt: programmer
+/først/, abstraher ved behov.)
+
+Obs obs: En abstraksjon som går lekk (hurr durr norsk, "Leaky abstraction") har
+en grusom effekt på tredjepart som ønsker å bruke koden uten å forstå hver
+enkelt lille bit. En lekk abstraksjon er dog ofte et steg mot å lage en tett
+abstraksjon. Her er det også en skala; "alle abstraksjoner lekker"; men de som
+holder i de fleste tilfeller og gir mer glede enn pine er ofte fine.
+
+Jeg klarer iblant å programmere en løsning før jeg begynner å tenke på mulige
+abstraksjoner. Det gir ofte fin kode. Er det muilg med en blogg? [[http://www.paulgraham.com][Paul Graham]]
+har en blog jeg liker, som er helt uten superfancy ting. Dette ville jeg prøve.
 
 Denne bloggen er ett dokument i org-mode som jeg kompilerer til HTML med den
 innebygde eksport-funksjonen.
@@ -34,9 +50,15 @@ Noen fordeler:
 
 Andre ting jeg liker med prosessen:
 - Jeg kan redigere i Org-mode. Org-mode er det nærmeste jeg har kommet slik
-  redigering av tekstdokumenter bør gjøres. Her en en [[https://www.youtube.com/watch?v=SzA2YODtgK4][introduksjonsvideo]].
+  redigering av tekstdokumenter bør gjøres. Her en en [[https://www.youtube.com/watch?v=SzA2YODtgK4][introduksjonsvideo]] til
+  org-mode.
 
 Teodor, /2017-01-16/.
+
+* Hva er rett abstraksjon?                                         :noexport:
+
+Egenvektorer? Ortogonalitet? Er abstraksjonen din i rett koordinatsystem? Er
+aksene vinkelrette? Sjekk 
 
 * Teknologi og tema                                                :noexport:
 
@@ -60,6 +82,10 @@ Delegering er vaaanskelig:
 Intenst ansvar kan gjøre at resultatet blir bra. Det kan også forhindre andre i
 å ønske å bidra.
 
+Utfordring: dele på arbeidet med Elm-kurset. Ser bra ut! Var vanskelig først,
+lettere etter hvert. Lettere å komme inn når noe er litt gjennomtenkt og man har
+noen referanser. Tror det gjelder de andre på teamet.
+
 * Typer eller ikke?                                                :noexport:
 
 Typer er en mulighet for en /meget tett/ feedbackløkke. Denne sikrer konsistens,
@@ -78,7 +104,8 @@ Clojure:
 Bret victor. Mye å hente her?
 
 Gode grensesnitt er lærbare. De eksponerer sin egen mekanikk og oppgave, og lar
-brukeren lære hva som gjelder av kausalitet for det aktuelle problemet.
+brukeren lære hva som gjelder av kausalitet for det aktuelle problemet. Gode
+grensesnitt lærer i tillegg brukeren om /problemet/.
 
 Lærbar programmering? Læringsdreven programmering? La andre lære kildekoden din?
 Dokumentajonen skal være en prosess til å forstå resten.
@@ -88,11 +115,13 @@ Litt forskjellige vinklinger:
   hvordan han kan bruke det uten store steiner i veien.
   - Kontinuerlig bruk gir kontinuerlig forbedring
   - Trenger ikke slå opp i ekstern dokuementasjon
-  - Flater ikke ut fordi han ikke har lest dokumentasjonen
+  - Læringen flater ikke ut over tid selv om man ikke dypper laaangt ned i
+    dokumentasjonen.
 - En lærbar kodebase er
   - Mulig å komme i gang med relativt fort, ingen enorm inngangsterskel
-  - Når du først er inne
-- Et lærbart miljø gir deg
+  - Når du først er inne er det lett og naturlig å bli bedre, flinkere, lett å
+    navigere
+- Et lærbart miljø (lærbar kultur) gir deg
   - En mulighet til å bidra tidlig
   - Kontinuerlig introduksjon til nye temaer, konsepter og ellers taus kunnskap
   - Lar deg bidra tilbake (fold onto self) når du lærer noe, og denne kunnskapen
@@ -109,6 +138,12 @@ her.
 * La feedback drive utviklingen din                                :noexport:
 
 eller "Hvilken feedbackløkke vil du ha"?
+
+Feedback er den største driveren til læring. Vi lærer gjennom tilbakemelding.
+Som kunnskapsarbeidere er dette vitalt. Vi sitter ikke og gjør én ting gjennom
+livet, vi lærer stadig nye ting. Når du velger deg verktøy (teknologi) for å
+løse en kunnskapsbasert utfordring bør derfor feedbackløkken du velger deg stå
+sentralt i valget av verktøy (teknologi).
 
 Jeg har i det syste hatt mye moro med live-programmering i Python. ~live-py~ er
 en utvidelse til Eclipse og Emacs som kjører live-evaluering av kode mens du
@@ -130,25 +165,45 @@ brukergrensesnittet vi lager. Figwheel gjør en veldig god jobb.
 
 <<gif med Fighweel>>
 
-Abstrakte problemer er en annen sak. Typer.
+~try-elm~ med unger er fantastisk.
+
+Scratch fungerer på denne måten ut av boksen. Scratch er dessverre meget langt
+fra hva vi må bruke av verktøy i hverdagene våres, og overgangen til teknologi
+som faktisk kan løse det aktuelle problemet kan/vil bli smertefullt.
+
+Abstrakte problemer er en annen sak. Typer. Feedback til hjernen? Å skrive ned
+som å resonnere? Å definere problemet så det kan /sees/ er kraftfullt. Om du kan
+skrive det ned i rett språk (Norsk, Matematikk, kode, tegninger, ...), vil det
+hjelpe tankeprosessen i rett retning.
 
 * Fryktdreven utvikling                                            :noexport:
 
 Frykt gjør at du ikke tør å teste. Frykt gjør at du aldri får tilbakemelding.
-Fryktdreven utvikling er antitesen til feedbackdreven utvikling.
+Fryktdreven utvikling er antitesen til feedbackdreven utvikling. Redsel gjør at
+vi ikke lærer. Redsel for å gjøre feil. Grusomt.
 
-* Ferdigheter                                                      :noexport:
+* Hva kan jeg?                                                     :noexport:
 
 Tre ting jeg bryr meg om:
 - Informasjonsteknolog :: Utvikling, programmeringsspråk, teknologier
-- Sivilingeniør :: Statikk, elementanalyse, likevekt, ikkelineariteter,
+- Sivilingeniør* :: Statikk, elementanalyse, likevekt, ikkelineariteter,
                    dimensjonering av stål og betong
 - Undervisning :: Formidlingsevne; studentassistent, Lær Kidsa Koding
+
+Kryssrelasjonene er særlig spennende. Lærbar programmering? Programmering for
+sivilingeniører? Hvordan kan sivilingeniører lære programmering? Her føler jeg
+potensial!
+
+*Er fullt klar over at man kan få en sivilingeniørgrad uten mekanikk, men jeg
+sliter med å finne et bedre uttrykk for kulturen for rasjonalitet, sannhet og
+gode løsninger jeg ser i sivilingeniøren. Det er denne kulturen som interesserer
+meg, ikke nødvendigvis momentdiagrammene eller likevektslikningene. "En
+naturlovenes forekjemper i et samfunn av kaos"?
 
 * "Folding onto itself"                                            :noexport:
 
 Konsept med kraft. *Selvdreven feedback-loop*. Selvforsterkenede feedback-loop.
-Resonnans. Kraften av frihet.
+Selvforsterkende effekt. Resonnans. Kraften av frihet.
 
 Eksempler:
 Programmerere har mer potensial til "selvbretting" enn mange andre yrkesgrupper.
@@ -191,6 +246,8 @@ krevende læringskurve.)
 
 * /Utfordrende/ læringskurve, ikke /bratt/ læringskurve            :noexport:
 
+... eller bør vi bare si "krevende læringsprosess"?
+
 Hva er en bratt læringskurve? For å svare på spørsmålet må vi vite aksene. Er en
 læring og en tid? Er en nytte og en innsats? Hva er x og hva er y? Bruker alle
 det feil?
@@ -203,6 +260,18 @@ godt og konsist!
 > Emacs har en læringskurve med skyhøyt takes
 
 Lett å forstå, ikke sant?
+
+Hva tenker jeg om "han som sa at Lisp bare er tull fordi det er vanskelig
+("uleselig", "uhåndterbart") på YouTube? "Skriv om alt til Perl"?
+
+- Enhver kodebase skrevet av én person kommer til å være bygget opp på en annen
+  måte enn en kodebase skrevet i konsensus
+- Fordel: stor grad av kohesjon
+- Fordel: (kanskje) få feil
+- Ulempe: stort krav til eksakt samme kompetanse som vedkommende har
+- Ulempe: liten grad av tilbakemelding på lærbarhet
+
+Felles kodebaser tvinges til å bli lærbare uten reimplementering.
 
 * Grad av kjenthet                                                 :noexport:
 
@@ -237,3 +306,199 @@ Merk: det er meget vanskelig å si hvilken grad av kjenthet noe har. Men det kan
 brukes til kommunikasjon. "Pass på å ikke gjøre for mye avhengig av dette; er
 ennå ikke helt gjennomtenkt". Vanskelig grensesnitt mot ansvar. Vil ikke ta
 ansvar for dette, så "sier bare at det er ukjent".
+
+** Skal grad av kjenthet eksponeres?
+
+Forskjellige personer har forskjellig behov til kjenthetsgrad. Bør alle trenge å
+ta hensyn til dette? Når jeg skriver en tekst, skal jeg formulere meg sikkert på
+kun det jeg anser som sikkert, eller skal jeg forutsette at leseren (som ofte
+stemmer) er litt mindre interessert i den epistemologiske biten, og bare vil
+kunne forutsette "det beste vi vet"?
+
+Personlig: veldig mange bare skummer over og dropper usikkerhetsformuleringer.
+Sier at "sånn er det, sånn skal det være". Vil sette agenda, sette virkelighet,
+mutere andres oppfatninger. Siden dette er vanlig, er man ofte vant til å være
+kritisk til andres påstander.
+
+Kritisk formulering:
+- Mer eksakt
+- Mindre passende mot prosa-form
+- Lite politisk, lite populistisk
+- Blir ofte verbost. Teksten full av "kanskje", "trolig", "sannsynligvis",
+  innholdet drukner lett
+
+"Det går sikkert greit"-formulering:
+- Bedre flyt i tekst
+- Passer godt overens med annen prosa, tekst
+- Se på hele teksten monadisk under usikkerhet? Konklusjonene underveis er
+  basert på usikkerhet, returnerer noe som er litt mer usikkert?
+
+#+BEGIN_SRC haskell
+data Statement a = { ... }
+
+instance Monad Statement where
+  return = assert
+  precondition >>= reasoning =
+    let assumes = getAssumes precondition
+        conclusion = reasoning assumes
+    in  conclusion
+#+END_SRC
+
+/geeklevel veryhigh.
+
+* Dokumenter som hierarkier                                        :noexport:
+
+Sekvensielt dokument: prosa.
+Hierarkisk dokuemnt: fakta. Kunnskapstre. Hvorfor i all verden kutter vi vekk
+strukturen? Mulig å beholde denne og navigere med den!
+
+Mer generelt: Kunnskapen vår er ca et tre, reelt en graf. I alle fall ikke en
+liste! Bedre å bruke et tre til å representere enn en liste. Wikipedia er et
+godt eksempel på kunnskap-som-graf. Lenker, diverse indekser. Konsepter er etter
+ord (navn). Ved duplikater: lag indeks, referer. Hash-map: Etter hash. Ved
+duplikater: lag lenket liste, populér "det under".
+
+Org-mode gjør dette heeelt fantastisk. Så lesbart! Så navigerbart! Mååå bruke!
+Vise! Dele! :D
+
+Ting som er gjort fint:
+1. Synlig dokumenthierarki, forståelig
+2. Semantisk betydning av hierarki, som gjør at koden kan refaktoreres
+3. Plain-tekst-representasjon, så dokumentet kan være i versjonskontroll og
+   redigeres (leses) av andre editorer
+4. ... selv om org-mode i seg selv gjør dette meget mer behagelig automatiserte
+   redigeringsverktøy som drar nytte av strukturen
+
+* Informasjonsflyt i dokumenter                                    :noexport:
+
+Hva er en +god+ behagelig måte å representere dokumenter på?
+
+- Behagelig å skrive dokument
+- Enkel kompilering, rask feedback på resultat
+- Behagelig å lese dokumentet.
+
+Som kan løses ved følgende:
+
+- Skriv dokumentet i formatet du ønsker
+- Sørg for at det finnes en skikkelig parser som kan gi deg dokumentet i en
+  hierarisk datastruktur
+- Skriv din egen eksport av datastrukturen
+
+Lær av Pandoc (men Pandoc har i tillegg mange typer inpustruktur).
+
+** Eksempel: Org-mode til HTML
+1. Skriv i org-mode, som er behagelig
+2. Bruk innebygget parser til å tolke dokument
+3. Bruk innebygget HTML-generator til å lage noe en nettleser kan lese
+
+Pluss: enkelt
+Minus: én svær HTML-side som kan være problematisk å linke til og navigere i.
+
+** Eksempel: Org-mode til JSON + viewer
+1. Skriv i org-mode
+2. Parse med Pandoc
+3. Skriv ut JSON
+   Bonus: Er ikke så alt for mye, så JSON bør holde fint.
+4. Lag webapp for å tolke og søke rundt i JSON.
+   F.eks. CLJS eller Elm. Søk, collapse, tree view.
+   Trenger bare shift-tab for å toggle collapse all og tab for toogle collapse
+   current.
+
+* Overlegenhet                                                     :noexport:
+
+"Jeg klarer ikke forklare dette".
+
+Forutsetning: jeg har rett, du tar feil, du skjønner ennå ikke faktaen som er
+inni hodet mitt. Stemmer dette? Bør det modereres? Hmm, spørs.
+
+Om man i "dette" legger "dette som er i hodet mitt" er det uproblematisk. Hvis
+"dette" betyr "denne etablerte faktaen", er saken en annen.
+
+Filosofisk: Bør jeg forutsette at jeg har rett? Bør jeg anerkjenne at jeg
+oprererer i en kontekst; en kontekst som kan være feil? Kanskje ikke?
+
+* Strategi for bloggen                                             :noexport:
+
+Bloggen fungerer som to ting:
+- En tenketank med mildt kaos
+- Et arkiv, et oppslagsverk, klart for andres oppmerksomhet
+
+Merk: det er forskjellige grunner til ikke å dele informasjon:
+1. For å skjule egne imperfeksjoner fra offentligheten
+2. Som en anerkjennelse at informasjonen er uferdig, og per nå gir forventet
+   netto negativ verdi til andre enn forfatteren (eller eventuelt et høyere
+   krav; netto positiv verdi til 95 % av leserene)
+
+Morsomt, var visst en skala dette også.
+
+* JavaScript -- takk for all fisken                                :noexport:
+
+Eller -- takk til Javascriptutviklere, som har grepet dagen og gjort verden
+bedre.
+
+Så vi liker å fokusere på det som suger med JavaScript. Eller de gode bitene.
+Her kommer et forsøk på å sette JavaScript i en større sammenheng.
+
+1. Funksjonell programmering
+
+   Javascript har vært funksjonelt siden starten. Hadde vi hatt funksjonelle
+   egenskaper i Java og C# i dag om det ikke var for JavaScript? Hadde
+   funksjonelle språk blitt vurdert? Ville vi fått ting som LINQ?
+
+   Det har vært forsøk på å få til dette siden 1960, og du klarte det.
+
+   Takk.
+
+2. Funksjonellreaktiv GUI-programmering
+
+   Facebook: du gjør all verdens lugubre greier med dataene mine. Du blander
+   sammen reklame og nettverk, og misbruker meg og mine venners rykte for å få
+   oss til å forbruke mer.
+
+   På den andre siden har du laget React. Ideen var gammel, men som dere
+   gjennomførte den. Fantastisk førsteordenseffekt. De fleste
+   javascriptutviklere kan i dag bruke et skikkelig fundament som håndterer
+   avhengigheter i GUI. Takket være dere får brukere en genuint bedre
+   opplevelse.
+
+   Og sekundæreffektene! Både ideologisk og som en plattform. Ideologisk har
+   dere økt den kollektive standarden for GUI-programmering.
+   Meldingsbokssystemer som objekter kan gå og legge seg, og jeg trenger ikke
+   akseptere å måtte jobbe med noe sånt igjen. Som plattform og bibliotek har
+   dere tatt på dere men grandios arbeidsmengde med de grunnleggende
+   byggesteinene. Elm og ClojureScript kan nå løse problemer i sine egne fine,
+   isolerte domener, og dytte resultatet ned på dere -- fordi dere lagde React
+   som et bibliotek, og ikke som et rammeverk.
+
+   Takk.
+
+3. Språklig frihet
+
+   JavaScript gir enormt mye frihet, og betraktning som en plattform gir i mange
+   tilfeller mer mening enn betraktning som et programmeringsspråk. Fordi
+   språket legger særdeles få rammer for hvordan ting skal gjøres, har
+   biblioteksutviklere fått meget stor frihet. De kan utforske hvordan ting bør
+   gjøres. Hadde Javascript heller beveget seg i retning Java, og bare tillatt
+   utviklere å gjøre det som i forkant ble betraktet som en strengt god idé,
+   hadde plattformen stagnert.
+
+   JavaScript er tidenes språklige R&D-operasjon. Friheten har dyttet ned
+   ansvaret for utvikling på programmerere, og ikke språkdesignere. Dette mener
+   jeg alt i alt er en god ting! Det har gitt oss fantastisk mange fine
+   effekter, selv etter kostnader som en utfordrende læringsprosess og mange
+   kaotiske kodebaser.
+
+   Denne tankegangen speiler seg i Lisp-kulturen, særlig i Racket. Betyr det at
+   vi heller burde hatt Racket i nettleseren? Nja. Da ville nok aldri alle de
+   eksisterende utviklerene blitt med over på JavaScript. Det ser litt ut som
+   Java, og fy som skinnet bedrar. Dere har kollektivt bedratt alle som har
+   blitt med over på JavaScript-toget.
+
+   Hva er så veien videre? Jeg mener bytecode er uungårlig. JavaScript behandles
+   allerede i dag som bytecode av språk som Elm, Clojure, Haskell og PureScript.
+   Og hvordan gjør det jobben? Særdeles bra! Ytelse er ofte bedre enn i
+   originalspråket. Hva skjer da når vi kan kompilere til bytecode? Jeg er
+   spent. Jeg gleder meg til å se WebAssembly komme på banen.
+
+   Takk.
+
