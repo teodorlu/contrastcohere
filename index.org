@@ -2,7 +2,6 @@
 #+AUTHOR: Teodor Heggelund
 #+LANGUAGE: nb_no
 #+OPTIONS: toc:nil num:nil html-postamble:nil
-#+EMAIL: teodor.heggelund@gmail.com
 
 * Velkommen!
 
@@ -49,7 +48,8 @@ Denne bloggen er ett dokument i org-mode som jeg kompilerer til HTML med den
 innebygde eksport-funksjonen.
 
 Noen fordeler:
-- Dritkjapt; jeg oppfatter ikke at det tar tid.
+- Kompileringsprosessen er "umiddelbar"
+- Lasting av nettsiden er "umiddelbar"
 - Ukomplisert. Ingen komponenter jeg ikke forstår -- jeg har full kontroll.
 
 Andre ting jeg liker med prosessen:
@@ -96,7 +96,7 @@ og bidrar til kohesjon og arkitektur.
 Fjernes typer, får man mulihet til å designe et friere språk. Jeg er særlig fan
 av Clojure sin HTML-DSL, som er mer behagelig å skrive enn HTML i seg selv.
 
-(Elm gjør et spennende forsøk, og Haskelll/halogen er heller ikke verst å
+(Elm gjør et spennende forsøk, og Haskell/halogen er heller ikke verst å
 bruke).
 
 Clojure: 
@@ -504,3 +504,83 @@ Her kommer et forsøk på å sette JavaScript i kontekst.
 
    Takk.
 
+* Effektivitet vs kompleksitet                                     :noexport:
+
+Dette er det uendelige problemet. Punkter:
+
+- Hvilket nivå som er lønnsomt å legge seg på varierer fra person til person
+- Høy kohesjon mellom personer gir gode muligheter til å dele kunnskap;
+  informasjon; prosedyrer, gir økt potensiale for kommunikasjon
+- Forskjellige personer løser forskjellige oppgaver på forskjellig vis. Det gir
+  høyst forkjellige krav til effektivitet. Hva skal settes i system?
+- Tidsbudsjett. 
+  - Løse én gang nå. Legge inn en innsats nå, og gjøre ting mer effektivt seinere.
+    - Legg grunnsteiner for systemet nå
+    - Bygg forståelse av problemet underveis
+    - Bygg muskelminne av problemet underveis
+    - Videreutvikle når muskelminnet sitter og problemforståelsen er økt.
+    - Aversjon mot ineffektivitet
+    - Sier noe om /potensialet/ til et system. Minste felles multiplum?
+  - Ta problemer som de kommer.
+    - Vær avers mot å innføre nye systemer
+    - Kjenn på smerte. Når noe gjør /skikkelig/ vondt, innfør systemet for å
+      gjøre det mindre smertefullt.
+    - Innfør system kun ved behov.
+    - Aversjon mot kompleksitet og terskel
+    - Sier noe om /grunnlinja/ til et system. Største felles divisor.
+
+* Hvor dybt må du gå for å finne selvbretting?                     :noexport:
+
+Grad av selvbretting synes et OK mål på grad av tilpasning; grad av kraft. La
+oss prøve å evaluere noen verktøy i kontekst av selvbretting.
+
+- Visual Studio: *3/10*. Lag ditt eget språk. Dog gode muligheter for key
+  bindings. Sannsynligvis markroer på et eller annet nivå, men man må gjennom en
+  masse menyer for å få tilgang. Menyene forhindrer frihet og selvbretting. Du
+  kan ikke bruke editoren til å redigere menyene.
+- Github Atom: *6/10*. Kan endre editoren i språket du bruker til å skrive programmet.
+- Emacs: *10/10*. Editoren er kun et tynt skall over funksjonalitet. Ultimat selvbretting.
+- Java: *5/10*. Kan lage egne prosedyrer og klassehierarkier. Arv kan være
+  nyttig. Overloading av funksjonalitet i forskjellige objekter. Problematikk:
+  svært verbost, må skrive mye for å få gjort noe. Funksjonsdeklarasjon er
+  komplisert. Før Java 8 måtte man ha en klasse. Nå klarer man seg uten. Typer
+  må ofte lages selv.
+- C#: *6/10*. Litt mer fritt enn Java.
+- Haskell: *8/10*. Konsist. Spennende potensial for DSL-er. Bruk av DSL-er
+  typesjekker i språket. Implisitt typing gjør ting enda bedre.
+- Python: *9/10*. Fullstendig frihet. Hva som følger med er ikke spesielt. Det
+  er bare brukt litt vanskeligere deler av språket som man vanligvis ikke
+  eksponeres for. Dekoratorer, metaklasser. Mulig å tilpasse til hva man trenger.
+- Lisp: *10/10*. Det som følger med er en liiten kjerne. Resten kan tilpasses
+  til hva man trenger. Rekursjon og funksjonsdeklarasjon er hakket mindre
+  elegant enn i Haskell
+
+* Presis eller implisitt?                                          :noexport:
+
+Tommelfingerregel: vær presis. Vær konsis.
+
+Unntak: Noen ganger er implisitt kommunikasjon svært effektivt. Når begeret for
+presis kommunikasjon er fylt, kan det fremdeles være noe igjen i den implisitte.
+
+Programmering: /Du må være presis/. Ellers går det ikke.
+
+Tekst som andre skal lese: Det kan være andre ting å tjene på
+
+* Presentabel eller ren?                                           :noexport:
+
+Spennende hvor mange av disse innleggene som utforsker en kontrast?
+Contrastcohere var kanskje ikke et så alt for dårlig navn, når alt kommer til
+alt. Der er imidlertid på engelsk. Jeg liker å skrive på norsk.
+
+Dagens kontrast: bør du optimalisere representasjonen for noe rent, generelt,
+som kan være en fysisk lov; eller bør du gjøre det så behagelig å ta inn over
+seg som mulig?
+
+- Dokumenter du sender til andre skal være presentable.
+- Dokumenter du skriver for egne formål, for å forstå hva du selv driver med,
+  bør gjerne være presise.
+
+Eller
+
+- Kilden skal være presis
+- Resultatet du leverer skal være presentabelt
