@@ -3,6 +3,36 @@
 #+LANGUAGE: nb_no
 #+OPTIONS: toc:nil num:nil html-postamble:nil
 
+# Dette er en kommentar uansett hvor den står. Som Python :D
+
+* COMMENT Meta
+
+Dette kapittelet er litt metadiskusjon. Hvordan bør *dette* gjøres?
+
+Siden kapittelet er en COMMENT, blir det ikke med under eksport.
+
+** Tittel
+
+Denne overskriften er en kommentar. Det betyr at den ikke kommer med under eksport.
+
+Alternativ tittel: Jeg skriver, jeg tenker. (Litt feil småpirk; ikke jeg skriver
+altså tenker jeg, men jeg skriver, så jeg kan tenke andre tanker)
+
+Latin:
+- Cogito :: Jeg tenker
+- Scribo :: Jeg skriver
+- Ergo :: Ergo, derfor
+
+** Generelle forbedringer til bloggen
+
+*** TODO Bytt ut "du"-referanser med noe bedre
+
+Inntrykket er for dårlig. Når jeg skriver "du", dytter jeg for mye ansvar over
+på deg. Det bør jeg ikke gjøre.
+
+/Min/ tekst, /jeg/ tar ansvar!
+
+
 * Velkommen!
 
 Teodor, /2017-01-16/.
@@ -51,7 +81,7 @@ abstraksjon. Her er det også en skala; "alle abstraksjoner lekker"; men de som
 holder i de fleste tilfeller og gir mer glede enn pine er ofte fine.
 
 Jeg klarer iblant å programmere en løsning før jeg begynner å tenke på mulige
-abstraksjoner. Det gir ofte fin kode. Er det muilg med en blogg? [[http://www.paulgraham.com][Paul Graham]]
+abstraksjoner. Det gir ofte fin kode. Er det mulig  med en blogg? [[http://www.paulgraham.com][Paul Graham]]
 har en blog jeg liker, som er helt uten superfancy ting. Dette ville jeg prøve.
 
 Denne bloggen er ett dokument i org-mode som jeg kompilerer til HTML med den
@@ -268,6 +298,8 @@ imidlertid /mulig/ å forstå hvordan det fungerer, gitt at man klatrer en
 krevende læringskurve.)
 
 * /Utfordrende/ læringskurve, ikke /bratt/ læringskurve            :noexport:
+
+I dag skal jeg være pedantisk. Jeg føler jeg må.
 
 ... eller bør vi bare si "krevende læringsprosess"?
 
@@ -597,6 +629,15 @@ Eksempel: Blogger. Tematikken er sprikende. Hvis kategorisystemet vårt skulle
 vært presist, hadde vi mistet hele mangfoldet, og mesteparten av de kule
 tingene.
 
+Felle: Noen ganger er det bare lettere å gjøre det implisitt når du burde gjort
+det presist. Ved å gjøre det implisitt leverer du et dårligere resultat, fordi
+du ikke har jobba skikkelig gjennom problemet. Du forsøpler kommunikasjonen.
+
+Felle 2: Folk vet forskjellige ting. Andre vet ikke hva du vet. Det du
+presenterer som presis informasjon kan være vanskelig å skjønne for andre. Du
+kan unnlate å presentere innhold som ikke hører hjemme i en heeelt presis tekst,
+som kan føre til at du fjerner innhold som andre har bruk for.
+
 * Presentabel eller ren?                                           :noexport:
 
 "Korrekt eller behagelig?"
@@ -617,3 +658,38 @@ Eller
 
 - Kilden skal være presis
 - Resultatet du leverer skal være presentabelt
+
+* Ferdig eller ikke?                                               :noexport:
+
+Når skal man slippe ting? Når det er 100 % ferdig? Eller før? Er det OK å fikse
+ting etter det har kommet ut? Hva med blogposter? Skal de permanent være som de
+var? Bør det være mulig å spole i tid? Det krever litt system. Software FTW.
+"Hø, ja det er litt vanskelig. Gi meg en uke."
+
+* I søk etter en optimal verdensmodell                             :noexport:
+
+Vi løper alle rundt i verden med en forestilling om hvordan verden er. Vi
+forestille oss hvordan ting vil kunne foregå. Vi bruker verdensmodellen til å
+predikere, og om den suger, så har vi et meget stort problem.
+
+Hvordan tenker vi på verden?
+
+Hvordan tenker vi 
+
+* Verdien av isolasjon                                             :noexport:
+
+Isolasjon henger sammen med effektivitet og fokus. Per nå er hele denne teksten
+er svær monolitt. Bør den eksporteres som mange små? Søkes gjennom og hver
+overskrift på hver sin side? Eller parses inn så den kan tolkes som enkeltsider
+av brukeren?
+
+Selv om jeg ønsker å se på alt i én kontekst, er det ikke sikkert at det passer
+for alle andre. Verktøyene er svært forskjellige. Å skrive og navigere i
+Org-mode kjennes villt forskjellig fra å lese en nettside. Jeg kan operere på et
+hierarki. Personen i den andre enden er avhengig av å
+
+* Forskere og ingeniørerer
+
+- Forskning er *fundamentert*: påstander er fundamentert på ren kunnskap. Ingen
+  skilpadder.
+- Ingeniørdrift er *kalibrert*: påstander er sjekket mot effekter og behov.
