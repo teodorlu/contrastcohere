@@ -20,6 +20,16 @@ Tanker bak å ha en blogg:
 Jeg svarer på elektronisk post sendt til fornavn punktum etternavn på domenet
 Google bruker til elektronisk post.
 
+Så hva kan du forvente å se her? ... alt er filosofi. Så du kan kalle dette en
+filosofiblogg? Nja. Ikke fryktelig nyttig. Så er alt annet. Da gir det ikke
+særlig mye informasjon. Noen temaer som går igjen:
+- *Epistemologi*. Hva vet vi? Hva vet vi ikke?
+- *Systemer*. Hvordan henger ting sammen? Utvikling blir ofte kalt
+  /system/utvikling, ikke helt uten grunn. Systemteori er også spennende.
+  Hvordan oppfører ting seg når det er satt i system?
+- *Utvikling*. Jepp, jeg er utvikler, jess, jeg ser verden gjennom en utviklers
+  øyne. Sikkert også en del her som ikke er direkte relatert til utvikling.
+
 * Abstraher ved behov, ikke før
 
 Teodor, /2017-01-16/.
@@ -87,6 +97,17 @@ Intenst ansvar kan gjøre at resultatet blir bra. Det kan også forhindre andre 
 Utfordring: dele på arbeidet med Elm-kurset. Ser bra ut! Var vanskelig først,
 lettere etter hvert. Lettere å komme inn når noe er litt gjennomtenkt og man har
 noen referanser. Tror det gjelder de andre på teamet.
+
+Følelsesmessig: Å ikke lenger ha kontroll. Å delegere er å miste kontroll, /med
+vilje/. Hvem ved sine fulle fem går med på noe sånt???
+
+Nå er folk litt forskjellige på denne biten. Noen har null problemer med å
+delegere, fordi de ganske enkelt ikke bryr seg. "Ditt ansvar, dust.". Andre har
+svære problemer med å delegere fordi de ikke klarer å gi slipp på ansvaret.
+
+Merk: noen ganger må man hoppe i det uten å ha kontroll. Andre ganger er det en
+helt tullete avgjørelse å slippe styringen, og man får krise når ting kunne gått
+bra.
 
 * Typer eller ikke?                                                :noexport:
 
@@ -557,6 +578,8 @@ oss prøve å evaluere noen verktøy i kontekst av selvbretting.
 
 * Presis eller implisitt?                                          :noexport:
 
+"Korrekt eller behagelig?"
+
 Tommelfingerregel: vær presis. Vær konsis.
 
 Unntak: Noen ganger er implisitt kommunikasjon svært effektivt. Når begeret for
@@ -564,9 +587,19 @@ presis kommunikasjon er fylt, kan det fremdeles være noe igjen i den implisitte
 
 Programmering: /Du må være presis/. Ellers går det ikke.
 
-Tekst som andre skal lese: Det kan være andre ting å tjene på
+Tekst som andre skal lese:
+- Det er ofte smart å være presis
+- Du kan ofte få ekstra mye ut av å bruke implisitte virkemidler
+- Ekstra bonus: tenk på hvordan andre tenker på ting. Hvordan kan du gjøre denne
+  tenkingen lettere? Bedre?
+
+Eksempel: Blogger. Tematikken er sprikende. Hvis kategorisystemet vårt skulle
+vært presist, hadde vi mistet hele mangfoldet, og mesteparten av de kule
+tingene.
 
 * Presentabel eller ren?                                           :noexport:
+
+"Korrekt eller behagelig?"
 
 Spennende hvor mange av disse innleggene som utforsker en kontrast?
 Contrastcohere var kanskje ikke et så alt for dårlig navn, når alt kommer til
