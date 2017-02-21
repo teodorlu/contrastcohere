@@ -25,19 +25,43 @@ Latin:
 
 ** Generelle forbedringer til bloggen
 
-*** TODO Bytt ut "du"-referanser med noe bedre
+*** TODO Bytt ut "du"-Our macros are written in a CK style. We distinguish values, which are always quoted like '(1 2 3), from general applicative expressions such as (c-append '(1) (c-cons '2 '(3 4))), which may contain nested applications. Values are regarded as results of the CK evaluation. Here is the first example, of the CK-style macro cons:
+
+referanser med noe bedre
 
 Inntrykket er for dårlig. Når jeg skriver "du", dytter jeg for mye ansvar over
 på deg. Det bør jeg ikke gjøre.
 
 /Min/ tekst, /jeg/ tar ansvar!
 
+** Nyttige ting
+
+Snippets om hvordan å sette inn blokker:
+
+| Nøkkelord | Effekt                                |
+|-----------+---------------------------------------|
+| s         | #+BEGIN_SRC ... #+END_SRC             |
+| e         | #+BEGIN_EXAMPLE ... #+END_EXAMPLE     |
+| q         | #+BEGIN_QUOTE ... #+END_QUOTE         |
+| v         | #+BEGIN_VERSE ... #+END_VERSE         |
+| c         | #+BEGIN_CENTER ... #+END_CENTER       |
+| l         | #+BEGIN_EXPORT latex ... #+END_EXPORT |
+| L         | #+LATEX:                              |
+| h         | #+BEGIN_EXPORT html ... #+END_EXPORT  |
+| H         | #+HTML:                               |
+| a         | #+BEGIN_EXPORT ascii ... #+END_EXPORT |
+| A         | #+ASCII:                              |
+| i         | #+INDEX: line                         |
+| I         | #+INCLUDE: line                       |
+
+Mer info på [[http://orgmode.org/manual/Easy-templates.html#Easy-templates][nettsiden til org-mode]].
 
 * Velkommen!
 
 Teodor, /2017-01-16/.
 
-Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet!
+Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet! Foreløpig er
+det ikke mye her!
 
 Tanker bak å ha en blogg:
 - Det kan være en god idé å sette seg ned for å tenke grundig gjennom noe, til
@@ -50,23 +74,36 @@ Tanker bak å ha en blogg:
 Jeg svarer på elektronisk post sendt til fornavn punktum etternavn på domenet
 Google bruker til elektronisk post.
 
-Så hva kan du forvente å se her? ... alt er filosofi. Så du kan kalle dette en
-filosofiblogg? Nja. Ikke fryktelig nyttig. Så er alt annet. Da gir det ikke
-særlig mye informasjon. Noen temaer som går igjen:
-- *Epistemologi*. Hva vet vi? Hva vet vi ikke?
+Så hva kan du forvente å se her?
+
+Alt er filosofi. Så dette er en filosifiblogg. Er det sånn den bør
+kategoriseres? Nja. Ikke fryktelig nyttig. Så er alt annet. Da gir det ikke
+særlig mye informasjon.
+
+Noen temaer som går igjen:
+
+- *Epistemologi*. Hva vet vi? Hva vet vi ikke? Hvordan bør vi forholde oss til
+  hva vi vet og ikke vet?
 - *Systemer*. Hvordan henger ting sammen? Utvikling blir ofte kalt
-  /system/utvikling, ikke helt uten grunn. Systemteori er også spennende.
-  Hvordan oppfører ting seg når det er satt i system?
+  /system/utvikling, ikke helt uten grunn. Systemteori behandles i
+  utgangspunktet uavhengig av systemutvikling, og er et spennende fagfelt.
+  Hvordan oppfører ting seg når det er satt i system? Hvilke kvalitative
+  forskjeller er det på et individ og et system av individer? Hvordan er et
+  system forskjellig fra summen av individene?
 - *Utvikling*. Jepp, jeg er utvikler, jess, jeg ser verden gjennom en utviklers
   øyne. Sikkert også en del her som ikke er direkte relatert til utvikling.
 
-* Abstraher ved behov, ikke før
+* Abstraher ved behov, ikke før                                    :noexport:
+
+# Her blander jeg to forskjellige ting: (a) at innholdet kommer først, og
+# utseendet sekundært, og (b) at abstraksjoner bør innføres når det er /behov/
+# for dem; ikke før. Kommenterer denne ut inntil videre.
 
 Teodor, /2017-01-16/.
 
 Abstraksjoner er herlig. Det fyller meg med en god, varm følelse når jeg
-introduserer en god abstraksjon som gjør problemet lettere, og bedre å jobbe
-videre. Og gode, varme følelser er fint, eller hva?
+introduserer en god abstraksjon som gjør problemet renere. Særlig de som gjør
+problemet lettere å forstå. Og gode, varme følelser er fint, eller hva?
 
 Noen ganger skal man ikke abstrahere. For eksempel før man har forstått
 problemet. Hvilket problem prøver jeg å løse med blogg? Hvilken motor skal jeg
@@ -97,10 +134,126 @@ Andre ting jeg liker med prosessen:
   redigering av tekstdokumenter bør gjøres. Her en en [[https://www.youtube.com/watch?v=SzA2YODtgK4][introduksjonsvideo]] til
   org-mode.
 
+Når jeg lagrer filen, får jeg automatisk generert HTML-versjonen. Bruker denne
+snutten Emacs Lisp for å få det til:
+
+#+BEGIN_SRC emacs-lisp
+(defun toggle-org-html-export-on-save ()
+  (interactive)
+  (if (memq 'org-html-export-to-html after-save-hook)
+      (progn
+        (remove-hook 'after-save-hook 'org-html-export-to-html t)
+        (message "Disabled org html export on save for current buffer..."))
+    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+    (message "Enabled org html export on save for current buffer...")))
+#+END_SRC
+
+Kilde [[https://www.reddit.com/r/emacs/comments/4golh1/how_to_auto_export_html_when_saving_in_orgmode/][aaptel på Reddit]].
+
 * Hva er rett abstraksjon?                                         :noexport:
 
-Egenvektorer? Ortogonalitet? Er abstraksjonen din i rett koordinatsystem? Er
-aksene vinkelrette? Sjekk 
+Teodor, /2017-02-20/.
+
+# Dette innlegget blander sammen to problemer:
+# - Når skal vi abstrahere?
+# - Diskusjon rundt rammeverk og biblioteker.
+# Finnes det en rød tråd for å snakke om begge deler i samme kontekst, eller bør
+# innlegget splittes i to? Strategi: les gjennom og gruble så lenge ting er
+# uklart, se etter en løsning.
+
+Abstraksjon er kjernen i programvareutvikling. Uten abstraksjon kunne ikke
+verdien eksistert som den finnes i dag. Kompliserte systemer vi tar for gitt
+ville vært praktisk umulig å utvikle. Abstraksjon er å løse problemet én gang.
+Abstraksjon er å slippe å tenke over problematikk fra forrige gang fordi den
+allerede er /løst/.
+
+** Gode abstraksjoner er ortogonale
+
+Så vi klarer å abstrahere når vi slipper å tenke på problemet neste gang. Dette
+klarer vi ikke alltid. Når vi også neste gang må tenke på problemet har vi en
+/lekk abstraksjon/. Se teksten til [[https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/][Joel Spolsky]] og videoen til [[https://www.youtube.com/watch?v=gRsyY0kzXfw][Mattias Petter
+Johansson]] for mer om abstraksjoner som går lekk, på engelsk.
+
+/Effekten/ av en abstraksjon som går lekk er altså at vi må dykke ned i
+detaljene vi egentlig skulle vært isolert mot.
+
+Men hvorfor får vi abstraksjoner som går lekk? Jeg vil trekke fram
+/ortogonalitet/. Mange kjenner konseptet i kontekst av 2D-koordinater. To linjer
+er ortogonale hvis de er vinkelrette på hverandre. Hva fører dette til?
+
+#+BEGIN_QUOTE
+/Linjen A er ortogonal på linjen B dersom projeksjonen av bevegelse på A ikke
+gir bevegelse på B/
+#+END_QUOTE
+
+Ortogonalitet er altså et mål på uavhengighet. En abstraksjon bør løse /ett/
+problem, uavhengig av de andre. I matematikk snakker vi ofte om å finne
+egenvektorene til et system. Generelt: vi har laget en /ortogonal/ abstraksjon
+når den fungerer uavhengig av endringer i resten av systemet.
+
+Påstand: Når vi skriver et bibliotek i stedet for et rammeverk, tvinges vi til å
+lage en abstraksjon som i større grad kan kombineres (komponeres) med andre
+abstraksjoner. /Biblioteker blir lettere ortogonale enn rammeverk./
+
+** Premisser for et godt rammeverk
+
+Den direkte effekten av abstraksjoner er hvordan hvordan vi bedre kan løse det
+spesifikke problemet abstraksjonen er laget for å hjelpe oss med. Så kan vi
+begynne å tenke på hvordan abstraksjonen påvirker helhetsbildet. Gjør
+abstraksjonen vår det vanskeligere å legge til ekstra funksjonalitet? Blir det
+vanskeligere å bruke andre abstraksjoner? Her er forskjellen mellom
+/biblioteker/ og /rammeverk/ sentral:
+
+- Et *bibliotek* gir komponenter som vi selv kan sette sammen, som Lego.
+- Et *rammeverk* definerer prosessen, og lager "former" der vi kan plugge inn
+  våre egne komponenter.
+
+Hvorfor oppstår rammeverk? Gode rammeverk er det naturlige resultatet av mange
+iterasjoner på liknende problemer. En god prosess er funnet, og "formene" hvor
+tilpasning kan plugges inn er veldefinert. Et godt rammeverk kommuniserer i
+tillegg kunnskap om problemet. Basert på lang erfaring om problemet, kan et godt
+rammeverk inneholde mye informason som ellers er taus.
+
+Når kan bruk av rammeverk bli en begrensning? I forrige avsnitt gjør jeg noen
+antagelser som ikke alltid stemmer:
+
+- Rammeverket har gjort gode, korrekte designvalg
+- Rammeverket løser samme problem som du har
+- Problemet er statisk; problemet endrer seg ikke over tid
+- Rammeverket er en perfekt løsning uavhengig av progresjon i problem- og
+  løsningsforståelse; det er ikke behov for å endre prosessen etter hvert som
+  forståelsen blir bedre.
+
+** Et alternativ til rammeverk
+
+- Funksjonalitet i et bibliotek
+- Forslag til struktur for sammenkobling av komponenter separat:
+  - i dokument?
+  - Som en mal til bygg-verktøy? lein-my-arch-using-some-lib?
+
+** Effekten 
+
+#+BEGIN_QUOTE
+Valg av feil abstraksjon blir kun et problem når vi eksponerer abstraksjonen vår
+som et rammeverk, og ikke som et bibliotek. Altså når vi gir brukeren mulighet
+til å plugge inn sin egen kode i midten. Vi kan maks bruke ett rammeverk om
+gangen! Når vi derimot har eksponert abstraksjonen vår som et bibliotek, setter
+vi ikke globale føringer for hvordan "ting skal gjøres", og vi kan lett bruke
+flere biblioteker på en gang. Tenk bibliotek kontra bokklubb.
+#+END_QUOTE
+
+[[http://tomasp.net/][Tomas Petricek]] har skrevet spennende innlegg om hvorfor han [[http://tomasp.net/blog/2015/library-frameworks/][ikke liker rammeverk]]
+og om hvordan å bygge opp rammeverk som [[http://tomasp.net/blog/2015/library-layers/][små biter som kan settes sammen]].
+
+** Abstraksjon som rammeverk.
+- Én abstraksjon er tillatt.
+- Styrer måten ting skal settes sammen på
+
+** Abstraksjon som bibliotek.
+- Mange abstraksjoner er tillatt.
+- Gir komponenter som kan kobles sammen på mange forskjellige måter.
+
+Ref: "Når ikke lenger en person skal gjøre alt".
 
 * Teknologi og tema                                                :noexport:
 
@@ -138,6 +291,33 @@ svære problemer med å delegere fordi de ikke klarer å gi slipp på ansvaret.
 Merk: noen ganger må man hoppe i det uten å ha kontroll. Andre ganger er det en
 helt tullete avgjørelse å slippe styringen, og man får krise når ting kunne gått
 bra.
+
+Eller: /ledelse som bibliotek/; ikke rammeverk.
+
+To kategorier:
+
+1. Ledelse under forutsetning om at hva jeg vet er alt som er relevant
+   - Hierarki-basert
+2. Ledelse under forutsetning om at jeg ikke vet alt
+   - Nettverk-basert
+
+To typer verditilføring:
+- Tjenester. Du kan spørre meg om dette, ...
+- Struktur. Vil følger alle /denne/ prosedyren, ... -> kohesjon -> verdi
+
+Fakta + forslag:
+- *Fakta*: her er informasjon som kan være nyttig.
+- *Forslag*: ut ifra min erfaring ville jeg begynt med en prosedyre som ser slik
+  ut. Hvis du ikke veit hvordan du kan starte, kan dette være en god ting.
+
+Fakta og forslag/erfaring/prosess fyller to forskjellige roller:
+- *Fakta* booster nytten av resonnering (analyse)
+- *Erfaring* gir mulige direkteløsninger (intuisjon)
+
+Personlig utfordring: tilbakemelding når noe ikke er godt nok. Jeg misliker å gi
+negative tilbakemeldinger, hovedsaklig fordi de kan hindre engasjement,
+individualitet og evne til å ta egne valg og "gjøre det beste". Dette er nok en
+treningssak.
 
 * Typer eller ikke?                                                :noexport:
 
@@ -185,8 +365,7 @@ Litt forskjellige vinklinger:
       /er/, det må tas med relevante personer. Trekk info tilbake til "draft";
       sett state til "diskuteres, er uferdig".
 
-(Notat: fiks "du" / "han" / "vedkommende" -- innfør gjerne konsistens i pronomen
-her.
+(Notat: fiks "du" / "han" / "vedkommende" -- innfør konsistens)
 
 * La feedback drive utviklingen din                                :noexport:
 
@@ -218,7 +397,7 @@ brukergrensesnittet vi lager. Figwheel gjør en veldig god jobb.
 
 <<gif med Fighweel>>
 
-~try-elm~ med unger er fantastisk.
+~try-elm~ med unger er fantastisk. Gif?
 
 Scratch fungerer på denne måten ut av boksen. Scratch er dessverre meget langt
 fra hva vi må bruke av verktøy i hverdagene våres, og overgangen til teknologi
@@ -240,7 +419,7 @@ vi ikke lærer. Redsel for å gjøre feil. Grusomt.
 Tre ting jeg bryr meg om:
 - Informasjonsteknolog :: Utvikling, programmeringsspråk, teknologier
 - Sivilingeniør* :: Statikk, elementanalyse, likevekt, ikkelineariteter,
-                   dimensjonering av stål og betong
+                    dimensjonering av stål og betong
 - Undervisning :: Formidlingsevne; studentassistent, Lær Kidsa Koding
 
 Kryssrelasjonene er særlig spennende. Lærbar programmering? Programmering for
@@ -312,7 +491,7 @@ i den følelsesmessige prosessen rundt å læring av et tema. Dette kan vi beskr
 godt og konsist!
 
 > Emacs har en krevende læringskurve
-> Emacs har en læringskurve med skyhøyt takes
+> Emacs har en læringskurve med skyhøyt tak
 
 Lett å forstå, ikke sant?
 
@@ -439,7 +618,7 @@ Som kan løses ved følgende:
   hierarisk datastruktur
 - Skriv din egen eksport av datastrukturen
 
-Lær av Pandoc (men Pandoc har i tillegg mange typer inpustruktur).
+Lær av Pandoc (men Pandoc har i tillegg mange typer inputstruktur).
 
 ** Eksempel: Org-mode til HTML
 1. Skriv i org-mode, som er behagelig
@@ -470,7 +649,10 @@ Om man i "dette" legger "dette som er i hodet mitt" er det uproblematisk. Hvis
 "dette" betyr "denne etablerte faktaen", er saken en annen.
 
 Filosofisk: Bør jeg forutsette at jeg har rett? Bør jeg anerkjenne at jeg
-oprererer i en kontekst; en kontekst som kan være feil? Kanskje ikke?
+oprererer i en kontekst; en kontekst som kan være feil? Kanskje ikke? Hva er
+mest nyttig? Noen ganger bør vi oppmuntre andre til å tenke selv. Nesten alltid,
+kanskje? Andre ganger snakker vi med personer som "bare vil ha svaret" for å
+kunne gjøre noe annet. Disse personene har helt andre behov.
 
 * Strategi for bloggen                                             :noexport:
 
@@ -484,15 +666,24 @@ Merk: det er forskjellige grunner til ikke å dele informasjon:
    netto negativ verdi til andre enn forfatteren (eller eventuelt et høyere
    krav; netto positiv verdi til 95 % av leserene)
 
+Håpet er at jeg klarer å balansere 2. på en god måte. Merk: Dette er ikke (per i
+dag) ment som et diskusjonsforum, der alle kommer og bidrar med sin bit. Hadde
+dette vært publisert på en slik måte ville saken vært en annen.
+
+Kanskje legge ved Gitter-chat? Følger repoet, enkelt, søkbart.
+
 Morsomt, var visst en skala dette også.
 
-* JavaScript -- takk for all fisken                                :noexport:
+* JavaScript -- takk for all fisken
+
+Teodor, /2017-02-21/.
 
 Eller -- takk til Javascriptutviklere, som har grepet dagen og gjort verden
 bedre.
 
 Så vi liker å fokusere på det som suger med JavaScript. Eller de gode bitene.
-Her kommer et forsøk på å sette JavaScript i kontekst.
+/Hvordan er språket?/ Her kommer et litt annet spørsmål: /Hva er effekten av
+språket?/
 
 1. Funksjonell programmering
 
@@ -559,7 +750,8 @@ Her kommer et forsøk på å sette JavaScript i kontekst.
 
 * Effektivitet vs kompleksitet                                     :noexport:
 
-Dette er det uendelige problemet. Punkter:
+Et uendelig problem. Eller formulering? Ikke noe som kan løses, men kanskje noe
+det er nyttig å ha en forhold til. Punkter:
 
 - Hvilket nivå som er lønnsomt å legge seg på varierer fra person til person
 - Høy kohesjon mellom personer gir gode muligheter til å dele kunnskap;
@@ -567,7 +759,8 @@ Dette er det uendelige problemet. Punkter:
 - Forskjellige personer løser forskjellige oppgaver på forskjellig vis. Det gir
   høyst forkjellige krav til effektivitet. Hva skal settes i system?
 - Tidsbudsjett. 
-  - Løse én gang nå. Legge inn en innsats nå, og gjøre ting mer effektivt seinere.
+  - Løse én gang nå. Legge inn en innsats nå, og gjøre ting mer effektivt
+    seinere.
     - Legg grunnsteiner for systemet nå
     - Bygg forståelse av problemet underveis
     - Bygg muskelminne av problemet underveis
@@ -582,7 +775,9 @@ Dette er det uendelige problemet. Punkter:
     - Aversjon mot kompleksitet og terskel
     - Sier noe om /grunnlinja/ til et system. Største felles divisor.
 
-* Hvor dybt må du gå for å finne selvbretting?                     :noexport:
+* Hvor dybt må du gå for å komme til selvbretting?                 :noexport:
+
+Relatert: "Folding onto self".
 
 Grad av selvbretting synes et OK mål på grad av tilpasning; grad av kraft. La
 oss prøve å evaluere noen verktøy i kontekst av selvbretting.
@@ -591,8 +786,10 @@ oss prøve å evaluere noen verktøy i kontekst av selvbretting.
   bindings. Sannsynligvis markroer på et eller annet nivå, men man må gjennom en
   masse menyer for å få tilgang. Menyene forhindrer frihet og selvbretting. Du
   kan ikke bruke editoren til å redigere menyene.
-- Github Atom: *6/10*. Kan endre editoren i språket du bruker til å skrive programmet.
-- Emacs: *10/10*. Editoren er kun et tynt skall over funksjonalitet. Ultimat selvbretting.
+- Github Atom: *6/10*. Kan endre editoren i språket du bruker til å skrive
+  programmet.
+- Emacs: *10/10*. Editoren er kun et tynt skall over funksjonalitet. Ultimat
+  selvbretting.
 - Java: *5/10*. Kan lage egne prosedyrer og klassehierarkier. Arv kan være
   nyttig. Overloading av funksjonalitet i forskjellige objekter. Problematikk:
   svært verbost, må skrive mye for å få gjort noe. Funksjonsdeklarasjon er
@@ -603,7 +800,8 @@ oss prøve å evaluere noen verktøy i kontekst av selvbretting.
   typesjekker i språket. Implisitt typing gjør ting enda bedre.
 - Python: *9/10*. Fullstendig frihet. Hva som følger med er ikke spesielt. Det
   er bare brukt litt vanskeligere deler av språket som man vanligvis ikke
-  eksponeres for. Dekoratorer, metaklasser. Mulig å tilpasse til hva man trenger.
+  eksponeres for. Dekoratorer, metaklasser. Mulig å tilpasse til hva man
+  trenger.
 - Lisp: *10/10*. Det som følger med er en liiten kjerne. Resten kan tilpasses
   til hva man trenger. Rekursjon og funksjonsdeklarasjon er hakket mindre
   elegant enn i Haskell
@@ -659,6 +857,9 @@ Eller
 - Kilden skal være presis
 - Resultatet du leverer skal være presentabelt
 
+Hvor på læringskuven er vi? En første introduksjon bør helle mot behagelig, mens
+under kommunikasjon med en ekspert er det verdi i å være presis.
+
 * Ferdig eller ikke?                                               :noexport:
 
 Når skal man slippe ting? Når det er 100 % ferdig? Eller før? Er det OK å fikse
@@ -666,15 +867,36 @@ ting etter det har kommet ut? Hva med blogposter? Skal de permanent være som de
 var? Bør det være mulig å spole i tid? Det krever litt system. Software FTW.
 "Hø, ja det er litt vanskelig. Gi meg en uke."
 
+Hva er målet til teksten? Å hjelpe videre tankevirksomhet? Eller er det å
+kommunisere noe til andre? Dette er helt forskjellige mål, som bør gi helt
+forskjellige midler. Hva du gjør for egen forståelses skyld er forskjellig fra
+hva du både (a) ønsker å formidle til andre, (b) har fått en såpass god
+forståelse av at det er hensiktsmessig å formidle, og (c) har fått formulert som
+en gjennomført tekst som gir mening i en helhet.
+
+Personlig heller nok jeg mot å slippe ting for sent. Så kanskje en idé å slippe
+ting /litt/ før jeg er komfortabel med å gjøre det.
+
+Effekt kan gi et viktig innblikk i når noe "bør slippes". Hva er effekten av
+feil informasjon? Hva er effekten av ingen informasjon?
+
+20/80 kan veilede litt her. Mer innsats inn i en oppgave er bra. Men effekten av
+innsatsen avtar med tid. Når produktet allerede er veldig bra, blir det ikke mye
+bedre av litt mer innsats. Slipp ut til andre når effekten av innsats avtar? Når
+effekt derivert på innsats synker merkbart?
+
 * I søk etter en optimal verdensmodell                             :noexport:
 
 Vi løper alle rundt i verden med en forestilling om hvordan verden er. Vi
 forestille oss hvordan ting vil kunne foregå. Vi bruker verdensmodellen til å
 predikere, og om den suger, så har vi et meget stort problem.
 
-Hvordan tenker vi på verden?
+Verdensmodellen vår er statig i utvikling. Vi tar feil, kalibrerer modellen, og
+prøver igjen. Så glømmer vi hva vi trodde i utgangspunktet! Fordi vi ikke husker
+at modellen vår har vært feil tidligere, stoler vi blindt på modellen når vi
+trenger den igjen. Vi dundrer inn i ny feil, og syklen starter igjen.
 
-Hvordan tenker vi 
+Spennende tema TODO TODO TODO
 
 * Verdien av isolasjon                                             :noexport:
 
@@ -686,10 +908,46 @@ av brukeren?
 Selv om jeg ønsker å se på alt i én kontekst, er det ikke sikkert at det passer
 for alle andre. Verktøyene er svært forskjellige. Å skrive og navigere i
 Org-mode kjennes villt forskjellig fra å lese en nettside. Jeg kan operere på et
-hierarki. Personen i den andre enden er avhengig av å
+hierarki.
 
-* Forskere og ingeniørerer
+Personen i den andre enden kommer ikke til å klone repoet for å lese i Org. Det
+ville ikke engang jeg gjort. Custom eksport? Kult om vi kan ha alt i én
+nettside. Laste informasjonen som JSON og operere på denne? Navigere fram og
+tilbake? Er ikke så stor at det blir problematisk å laste hele i én smell. I
+alle fall ikke for ren tekst. Det er lite av bilder her foreløpig.
+
+TODO TODO TODO
+
+* Forskehre og ingeniørerer                                        :noexport:
 
 - Forskning er *fundamentert*: påstander er fundamentert på ren kunnskap. Ingen
-  skilpadder.
+  "skilpadder hele veien ned".
 - Ingeniørdrift er *kalibrert*: påstander er sjekket mot effekter og behov.
+
+TODO TODO TODO
+
+* Grad av kaos                                                     :noexport:
+
+Eller, "Beseiring av termodynamikkens andre lov". Eller bare "Entropi". "Entropi
+i hverdagen"?
+
+Konteksten vår er alltid til en viss grad kaotisk eller ryddig. Hva skjer da med
+tingene rundt oss? Går de mot orden eller mot kaos? Ofte avhengig av person og
+situasjon. Noen er ryddige, andre er rotete. Noen ganger skal vi legge
+fundamentet for et langvarig programvareprosjekt, og andre ganger skal vi skrive
+en snutt for å løse en enkeltoppgave.
+
+Relatert:
+- Noen programmeringsspråk påtvinger innsats for å holde orden. Ofte typede
+  språk.
+  - Haskell :: Her må vi holde typene våre i orden. Grensesnitt må defineres og
+               være klare, slik at de kan typesjekker.
+  - Java :: Å sette ting i klasser er å sette ting i orden. Obs: klasser er en
+            høyere abstraksjon enn typer, og krever at vi har forstått hva vi
+            ønsker å løse tidlig. Dette er et problem!
+  - COBOL :: Et tidlig forsøk på å få nok dokumentasjon? Må i alle fall skrive mye.
+- Andre språk gir frihet. Disse er det gjerne raskere å komme igang med, men gir
+  en større kneik å klatre når ting begynner å bli stort.
+  - Python
+  - Clojure
+
