@@ -93,12 +93,61 @@ Noen temaer som går igjen:
 - *Utvikling*. Jepp, jeg er utvikler, jess, jeg ser verden gjennom en utviklers
   øyne. Sikkert også en del her som ikke er direkte relatert til utvikling.
 
+* Grad av kaos
+
+Teodor; /2017-02-21/; under /entropi/, /prosjektledelse/, /formidling/.
+
+Konteksten vår er alltid til en viss grad kaotisk eller ryddig. Hva skjer da med
+tingene rundt oss? Går de mot orden eller mot kaos? Ofte avhengig av person og
+situasjon. Noen er ryddige, andre er rotete. Noen ganger skal vi legge
+fundamentet for et langvarig programvareprosjekt, og andre ganger skal vi skrive
+en snutt for å løse en enkeltoppgave.
+
+Vi velger oss alle sammen en grad av kaos å arbeide i. Journalisten med all
+informasjonen han jobber med spredd over hele pulten. Professoren med stabel på
+stabel av åpne bøker. Prosjektlederen med det strøkne skrivebordet, og alt satt
+i rett perm. Jeg mener ikke det finnes en ideell grad av kaos -- selv om vi
+skulle ønske oss det. Er det ikke lett å ønske at vi hadde "litt mer struktur"
+på det vi driver med? Struktur kommer med en kostnad. Det er vanskeligere å
+tenke på ting som ikke passer inn i strukturen. Når andre skal kunne forstå hva
+vi jobber med er imidlertid struktur alfa omega. Struktur kapper informasjonen i
+nyttig og unyttig, og det er lettere å noe når nyttig er klart og tydelig
+adskilt fra unyttig. Hva om streken er tegnet litt feil; om vi ved et uhell har
+plassert nyttige og unyttige ting i feil bunke? Spiller liten rolle; rekkefølgen
+av ting lært blir kun litt forskjellig.
+
+Grad av kaos er et nyttig utgangspunkt for vurdering av programmeringsspråk.
+Noen programmeringsspråk påtvinger innsats for å holde orden. Disse er ofte
+statisk typede:
+
+- *Haskell* krever at vi holde typene våre i orden. Grensesnitt må defineres og
+  være klare, slik at de kan typesjekker.
+- *Java* krever at vi organiserer koden vår i /klasser/. Klassifisering for
+  orden! Dette fungerer meget bra når klassifisering er hva vi trenger. For
+  andre abstraksjoner kan det bli vanskelig. Klasser er i tillegg en mer rigid
+  abstraksjon enn typer. Vi må da enda tidligere vite hva vi egentlig lager,
+  ellers må vi gjøre store endringer seinere.
+- *COBOL* var et tidlig forsøk på å få forståelig kode, og oppmuntre til
+  skriving av dokumentasjon.
+
+Andre språk gir frihet. Disse er det gjerne raskere å komme igang med, men gir
+en større kneik å klatre når ting begynner å bli stort: "Hva mente jeg egentlig
+her?"
+
+- *Python* er fantastisk lett å komme i gang med. Alle filene du skriver kan
+  kjøres direkte, og feedbacken fra kjøring kan bli kvikk. Verktøy som
+  [[https://github.com/donkirkby/live-py-plugin][live-py-plugin]] hjelper i tillegg godt til.
+- *Clojure* har jeg kommet i gang med i det siste, og erfaringen med feedback er
+  meget god. Så god at den kan bli ytret som et problem, for når utviklingen
+  raser unna, kan det bli opprydningsarbeid....
+
 * JavaScript -- takk for all fisken
 
-Teodor, /2017-02-21/.
+Teodor; /2017-02-21/; under /utvikling/, /programmeringsspråk/,
+/funksjonell-programmering/.
 
-Eller -- takk til Javascriptutviklere, som har grepet dagen og gjort verden
-bedre.
+Alternativ tittel: Takk til Javascriptutviklerne, som har grepet dagen og gjort
+verden bedre. Om du foretrekker denne: tenk /dere/ når du leser /du/ under.
 
 Så vi liker å fokusere på det som suger med JavaScript. Eller de gode bitene.
 /Hvordan er språket?/ Her kommer et litt annet spørsmål: /Hva er effekten av
@@ -167,11 +216,16 @@ språket?/
 
    Takk.
 
+
+
 * Abstraher ved behov, ikke før                                    :noexport:
 
 # Her blander jeg to forskjellige ting: (a) at innholdet kommer først, og
 # utseendet sekundært, og (b) at abstraksjoner bør innføres når det er /behov/
 # for dem; ikke før. Kommenterer denne ut inntil videre.
+
+# Også: det kunne vært fint å snakke litt mindre om personlig erfaring med å
+# bygge denne bloggen, og mer om ting folk faktisk bryr seg om.
 
 Teodor, /2017-01-16/.
 
@@ -583,6 +637,8 @@ Felles kodebaser tvinges til å bli lærbare uten reimplementering.
 
 * Grad av kjenthet                                                 :noexport:
 
+# Hvordan relaterer dette til "grad av kaos"? Noe å lære?
+
 Merk: Dette handler om konseptet ferdig/uferdig som skala; ikke om
 "ferdigheter"; "ting du kjenner prosedyren for å gjøre".
 
@@ -695,6 +751,7 @@ Som kan løses ved følgende:
 Lær av Pandoc (men Pandoc har i tillegg mange typer inputstruktur).
 
 ** Eksempel: Org-mode til HTML
+
 1. Skriv i org-mode, som er behagelig
 2. Bruk innebygget parser til å tolke dokument
 3. Bruk innebygget HTML-generator til å lage noe en nettleser kan lese
@@ -703,6 +760,7 @@ Pluss: enkelt
 Minus: én svær HTML-side som kan være problematisk å linke til og navigere i.
 
 ** Eksempel: Org-mode til JSON + viewer
+
 1. Skriv i org-mode
 2. Parse med Pandoc
 3. Skriv ut JSON
@@ -836,13 +894,11 @@ presenterer som presis informasjon kan være vanskelig å skjønne for andre. Du
 kan unnlate å presentere innhold som ikke hører hjemme i en heeelt presis tekst,
 som kan føre til at du fjerner innhold som andre har bruk for.
 
-* Presentabel eller ren?                                           :noexport:
+* Korrekt eller deilig?                                            :noexport:
 
-"Korrekt eller behagelig?"
-
-Spennende hvor mange av disse innleggene som utforsker en kontrast?
-Contrastcohere var kanskje ikke et så alt for dårlig navn, når alt kommer til
-alt. Der er imidlertid på engelsk. Jeg liker å skrive på norsk.
+# Spennende hvor mange av disse innleggene som utforsker en kontrast?
+# Contrastcohere var kanskje ikke et så alt for dårlig navn, når alt kommer til
+# alt. Der er imidlertid på engelsk. Jeg liker å skrive på norsk.
 
 Dagens kontrast: bør du optimalisere representasjonen for noe rent, generelt,
 som kan være en fysisk lov; eller bør du gjøre det så behagelig å ta inn over
@@ -850,7 +906,7 @@ seg som mulig?
 
 - Dokumenter du sender til andre skal være presentable.
 - Dokumenter du skriver for egne formål, for å forstå hva du selv driver med,
-  bør gjerne være presise.
+  bør være presise.
 
 Eller
 
@@ -925,29 +981,4 @@ TODO TODO TODO
 - Ingeniørdrift er *kalibrert*: påstander er sjekket mot effekter og behov.
 
 TODO TODO TODO
-
-* Grad av kaos                                                     :noexport:
-
-# Eller, "Beseiring av termodynamikkens andre lov". Eller bare "Entropi".
-# "Entropi i hverdagen"?
-
-Konteksten vår er alltid til en viss grad kaotisk eller ryddig. Hva skjer da med
-tingene rundt oss? Går de mot orden eller mot kaos? Ofte avhengig av person og
-situasjon. Noen er ryddige, andre er rotete. Noen ganger skal vi legge
-fundamentet for et langvarig programvareprosjekt, og andre ganger skal vi skrive
-en snutt for å løse en enkeltoppgave.
-
-Relatert:
-- Noen programmeringsspråk påtvinger innsats for å holde orden. Ofte typede
-  språk.
-  - Haskell :: Her må vi holde typene våre i orden. Grensesnitt må defineres og
-               være klare, slik at de kan typesjekker.
-  - Java :: Å sette ting i klasser er å sette ting i orden. Obs: klasser er en
-            høyere abstraksjon enn typer, og krever at vi har forstått hva vi
-            ønsker å løse tidlig. Dette er et problem!
-  - COBOL :: Et tidlig forsøk på å få nok dokumentasjon? Må i alle fall skrive mye.
-- Andre språk gir frihet. Disse er det gjerne raskere å komme igang med, men gir
-  en større kneik å klatre når ting begynner å bli stort.
-  - Python
-  - Clojure
 
