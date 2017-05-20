@@ -1107,3 +1107,14 @@ konfigurasjonsparameter til alle funksjoner. Om vi klarer å være litt lurere,
 slipper vi unna dette, og kan skille på funksjoner som faktisk trenger
 konfigurasjonen og andre funksjoner som kan forbli rene. Vi kan da kun sende
 konfigurasjonen til funksjonene som trenger tilgang til konfigurasjonen.
+
+Så hvor ender vi opp? Vi kan lage oss en stige av abstraksjoner:
+
+1. *Rene funksjoner* med argumenter, det enkleste som finnes
+2. *Klasser* kan samle opp konfigurasjon og distribuere dette ut til de som
+   trenger det
+3. *Konfigurasjon i data*, à la =Record= i Elm pluss smarte valg av hvor vi skal
+   sende konfigurasjonen vår
+4. *Full DSL* som håndterer konfigurasjonen vi vil ha. [[http://tomasp.net/blog/2015/library-layers/][Tomas Petricek]] snakker om
+   konseptene bak dette. Se [[https://hackage.haskell.org/package/scotty][Scotty]] (Haskell), [[https://hackage.haskell.org/package/parsec][Parsec]] (Haskell) eller [[https://hackage.haskell.org/package/pandoc][Pandoc]] og
+   [[https://hackage.haskell.org/package/pandoc-types][Pandoc Types]] (Haskell) for eksempler på prinsippene i produksjons.
