@@ -13,8 +13,6 @@ Siden kapittelet er en COMMENT, blir det ikke med under eksport.
 
 ** Tittel
 
-Denne overskriften er en kommentar. Det betyr at den ikke kommer med under eksport.
-
 Alternativ tittel: Jeg skriver, jeg tenker. (Litt feil småpirk; ikke jeg skriver
 altså tenker jeg, men jeg skriver, så jeg kan tenke andre tanker)
 
@@ -23,16 +21,53 @@ Latin:
 - Scribo :: Jeg skriver
 - Ergo :: Ergo, derfor
 
-** Generelle forbedringer til bloggen
-
-*** TODO Bytt ut "du"-Our macros are written in a CK style. We distinguish values, which are always quoted like '(1 2 3), from general applicative expressions such as (c-append '(1) (c-cons '2 '(3 4))), which may contain nested applications. Values are regarded as results of the CK evaluation. Here is the first example, of the CK-style macro cons:
-
-referanser med noe bedre
+** Bytt ut "du"-referanser med noe bedre
 
 Inntrykket er for dårlig. Når jeg skriver "du", dytter jeg for mye ansvar over
 på deg. Det bør jeg ikke gjøre.
 
 /Min/ tekst, /jeg/ tar ansvar!
+
+** Vurder eksport
+
+Forskjellige muligheter her.
+
+*** Direktekonvertering
+
+Org -> Markdown -> Jekyll?
+
+Gode egenskaper:
+
+- Skrive i Org er en meget god opplevelse
+- Jekyll gjør det ryddig å finne hver enkelt post.
+
+Mange lag er problematisk. Ønsker å ha hver post på sin egen side ved eksport.
+
+*** Ut-inn
+
+Hva er ut-inn? Timeglass?
+
+1. Behagelig format (Org)
+2. Fleksibelt format (JSON)
+3. Behagelig format (HTML? Elm?)
+
+Dette er en refleksjon over følgende:
+
+- Vi vil ha det behagelig når vi utvikler
+- Dataen bør lagres standardisert
+- Vi vil ha det behagelig når vi leser.
+
+Implisitt; bjørnafjorden:
+
+1. Behagelig FEM-modellering
+2. Generell lagring i tabeller
+3. Behagelig printing av data
+
+Noen punkter:
+
+- I datalaget bør vi ikke ha avhengigheter
+- Over- og underlaget bør være så godt som mulig isolert
+- Muliggjør utbytte av frontends, eventuelt supplerende frontends.
 
 ** Nyttige ting
 
@@ -60,19 +95,21 @@ Mer info på [[http://orgmode.org/manual/Easy-templates.html#Easy-templates][net
 
 Teodor, /2017-01-16/.
 
-Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet! Foreløpig er
-det ikke mye her!
+Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet! Jeg svarer
+på elektronisk post sendt til fornavn punktum etternavn på domenet Google bruker
+til elektronisk post.
+
+Foreløpig er det ikke mye her.
 
 Tanker bak å ha en blogg:
-- Det kan være en god idé å sette seg ned for å tenke grundig gjennom noe, til
-  den grad at det er nyttig for andre
-- Noen ideer må bare ned med en gang, ellers blir de borte
-- Gamle ideer kan være nyttige
+- Tanker går gjennom en prosess. Først er de uferdige, ufullstendige og skjøre.
+  Senere blir de bedre. Før de har vært gjennom litt prosess er de ofte lite
+  nyttige for andre. Å skrive ned tanker kan bistå i en slik prosess.
+- Noen ideer må bare ned med en gang, ellers blir de borte!
+- Gamle ideer kan komme til nytte lang tid etter de er tenkt. Da er det lurt å
+  skrive ned!
 - ... og ved alt alt sammen er helt åpent, bør jeg da inderlig gjøre en OK jobb
-  -- ellers 
-
-Jeg svarer på elektronisk post sendt til fornavn punktum etternavn på domenet
-Google bruker til elektronisk post.
+  -- ellers blir det pinlig.
 
 Så hva kan du forvente å se her?
 
@@ -91,7 +128,7 @@ Noen temaer som går igjen:
   forskjeller er det på et individ og et system av individer? Hvordan er et
   system forskjellig fra summen av individene?
 - *Utvikling*. Jepp, jeg er utvikler, jess, jeg ser verden gjennom en utviklers
-  øyne. Sikkert også en del her som ikke er direkte relatert til utvikling.
+  øyne. Så her kommer det ting relatert til utvikling!
 
 * Grad av kaos
 
@@ -215,8 +252,6 @@ språket?/
    spent. Jeg gleder meg til å se WebAssembly komme på banen.
 
    Takk.
-
-
 
 * Abstraher ved behov, ikke før                                    :noexport:
 
@@ -974,7 +1009,7 @@ alle fall ikke for ren tekst. Det er lite av bilder her foreløpig.
 
 TODO TODO TODO
 
-* Forskehre og ingeniørerer                                        :noexport:
+* Forskere og ingeniørerer                                         :noexport:
 
 - Forskning er *fundamentert*: påstander er fundamentert på ren kunnskap. Ingen
   "skilpadder hele veien ned".
@@ -982,3 +1017,53 @@ TODO TODO TODO
 
 TODO TODO TODO
 
+* Prefer abstractions that flatten                                 :noexport:
+
+Hierarchies are
+- a hard cognitive load
+- tedious to write.
+
+Abstractions that flatten hierarchies are often useful.
+
+- Function composition over nested for loops
+- Bind (>>=) over nested pattern matching (Haskell)
+- Thread (->, -->) over nested function calls (Clojure)
+
+Why? Hierarchies are just sooo general. Not a tight abstraction. Hard to think
+about. Flat lists are more neat for the end user.
+
+How to find abstractions that flatten? Not easy. I try to look for really nested
+code, then consider if I can break out of this somehow.
+
+Trick: See if the nesting can be expressed as a data structure. The data
+structure may be built with composition. In C# you might want objects you can
+chain together. In Haskell, you want some infix operator for combination. For
+Clojure, you want to stick all your things inside a function/macro handling all
+the things.
+
+* Jeg vil ikke ha systemet ditt                                    :noexport:
+
+Prinsipper:
+
+- Verden er blitt så komplisert at det er tilnærmet umulig å vite alt
+- Vi takler kompleksiteten ved økende grad av ferdighet i /søk/; hvordan kan vi
+  få ut informasjon uten å lære /alt/? Hvordan kan vi finne akkurat hva vi leter
+  etter?
+- Over Internett og andre asynkrone informasjonskanaler er dette noe vi bare må
+  akseptere og omfavne. Hvordan kan brukeren av informasjonen min få vite
+  akkurat hva han trenger så fort som mulig?
+- Person til person er det mulig å være mer fleksibel. Skjønnsvurderinger kan
+  avgjøre hvordan personer kan måtte sette seg inn i noen grunnprinsipper før de
+  slippes løs i den store kaotiske verden. Dette er mulig fordi vi kan vurdere
+  /hva som trengs/ av grunnkunnskap; i kontekst.
+
+Så hva bør vi egentlig gjøre? For enkle problemer; gjør kunnskap så søkbar som
+mulig. Link til den generelle kunnskapen fra den spesielle. Gi eksemplene først,
+så kan mottakeren selv få generalisere og lage sitt eget system.
+
+Det går uansett ikke an å sende system og intuisjon direkte fra hjerne til
+hjerne (i dag). Vi er avhengig av å lage våre egne systemer. Mitt system
+fungerer i min kontekst, og er testet mot denne. Du trenger å løse helt andre
+problemer, og for disse kan systemet mitt være helt feil. Eller det kan hende at
+du ikke vil ha systemer i det hele tatt; men kun forholde deg til hva du har
+sett.
