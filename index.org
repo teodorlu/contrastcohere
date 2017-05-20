@@ -1091,3 +1091,19 @@ abstraksjonen for et problem. Mesteparten av koden vår er ikke på dette nivåe
 ennå! Vi skriver nye ting hele tiden, og skal bygge om hvordan delene henger
 sammen. Da vil vi ikke måtte skrive om /alt/ hver gang! Rene funksjoner
 komponerer bedre enn klasser, men klasser er konseptuelt kompakte.
+
+Klasser er naturlig fine til å gjøre /konfigurasjon/. Vi kan ta flere argumenter
+som stiller som styrer hvordan metodene våre oppfører seg i ettertid. Skal vi få
+til en tilsvarende god abstraksjon i kode, må vi være lure. Vi vil sannsynligvis
+ha et konfigurasjonsobjekt som en ren datatype. Det skal være mulig å spørre om
+et standardoppsett som har forutsatt så mye som mulig, og det skal være mulig å
+overstyre egne egenskaper. Elm gjør dette svært bra med sin =Record=-type. Vi
+kan da eksponere funksjoner som har konfigurasjonen curryet inn, så vi slipper å
+gjenta at vi må putte inn konfigurasjonen i alle kallene vi gjør.
+
+At vi eksplisitt må sende konfigurasjonen rundt (som kreves av rent funksjonelle
+miljøer) kan rent dumt implementeres med boilerplate; ett
+konfigurasjonsparameter til alle funksjoner. Om vi klarer å være litt lurere,
+slipper vi unna dette, og kan skille på funksjoner som faktisk trenger
+konfigurasjonen og andre funksjoner som kan forbli rene. Vi kan da kun sende
+konfigurasjonen til funksjonene som trenger tilgang til konfigurasjonen.
