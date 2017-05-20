@@ -1067,3 +1067,17 @@ fungerer i min kontekst, og er testet mot denne. Du trenger å løse helt andre
 problemer, og for disse kan systemet mitt være helt feil. Eller det kan hende at
 du ikke vil ha systemer i det hele tatt; men kun forholde deg til hva du har
 sett.
+
+* Klasser til konseptuell abstraksjon                              :noexport:
+
+Klasser skinner til konseptuell abstraksjon. Klasser mapper bra med ting vi ser
+rundt oss, og er meget naturlig å bruke til noe som /gjør noe/ med verden.
+Eksempel: et objekt som kan leses fra fil, og eksponere diverse egenskaper.
+Pakker vi dette i funksjoner får vi ofte en trickle-down effekt av IO -- Hvilke
+funksjoner skal operere på data, og hvilke skal lese og styre konteksten vår?
+Med klasser blir dette rent; vi har én datastruktur som vi kan operere på og
+gjøre ting med; vi kan lese denne fra filer og skrive til filer når vi er
+ferdig.
+
+Case i Python: det meste kan løses med list comprehensions. Når dette blir
+vanskelig kan vi vurdere klasser.
