@@ -1079,5 +1079,15 @@ Med klasser blir dette rent; vi har én datastruktur som vi kan operere på og
 gjøre ting med; vi kan lese denne fra filer og skrive til filer når vi er
 ferdig.
 
-Case i Python: det meste kan løses med list comprehensions. Når dette blir
-vanskelig kan vi vurdere klasser.
+Klasser er en fin måte å gjøre kode du har skrevet tilgjengelig for andre. Det
+er lett å forstå hva objekter av en klasse gjør; det passer bra med hvordan vi
+oppfatter verden. Dette tror jeg er mye av grunnen til at OO har kommet så langt
+i verden.
+
+Når vi skal vedlikeholde vår egne interne kodebase gjelder andre vurderinger.
+Hvor lett er det å gjøre endringer? Hvor mye kunnskap forutsettes? Kode klasser
+skrives etter mye prototyping; som gjør det mulig å finne den rette
+abstraksjonen for et problem. Mesteparten av koden vår er ikke på dette nivået
+ennå! Vi skriver nye ting hele tiden, og skal bygge om hvordan delene henger
+sammen. Da vil vi ikke måtte skrive om /alt/ hver gang! Rene funksjoner
+komponerer bedre enn klasser, men klasser er konseptuelt kompakte.
