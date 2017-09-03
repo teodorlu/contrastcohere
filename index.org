@@ -6,13 +6,10 @@
 # Dette er en kommentar uansett hvor den står. Som Python :D
 
 * COMMENT Meta
-
 Dette kapittelet er litt metadiskusjon. Hvordan bør *dette* gjøres?
 
 Siden kapittelet er en COMMENT, blir det ikke med under eksport.
-
 ** Tittel
-
 Alternativ tittel: Jeg skriver, jeg tenker. (Litt feil småpirk; ikke jeg skriver
 altså tenker jeg, men jeg skriver, så jeg kan tenke andre tanker)
 
@@ -20,20 +17,14 @@ Latin:
 - Cogito :: Jeg tenker
 - Scribo :: Jeg skriver
 - Ergo :: Ergo, derfor
-
 ** Bytt ut "du"-referanser med noe bedre
-
 Inntrykket er for dårlig. Når jeg skriver "du", dytter jeg for mye ansvar over
 på deg. Det bør jeg ikke gjøre.
 
 /Min/ tekst, /jeg/ tar ansvar!
-
 ** Vurder eksport
-
 Forskjellige muligheter her.
-
 *** Direktekonvertering
-
 Org -> Markdown -> Jekyll?
 
 Gode egenskaper:
@@ -42,9 +33,7 @@ Gode egenskaper:
 - Jekyll gjør det ryddig å finne hver enkelt post.
 
 Mange lag er problematisk. Ønsker å ha hver post på sin egen side ved eksport.
-
 *** Ut-inn
-
 Hva er ut-inn? Timeglass?
 
 1. Behagelig format (Org)
@@ -68,9 +57,7 @@ Noen punkter:
 - I datalaget bør vi ikke ha avhengigheter
 - Over- og underlaget bør være så godt som mulig isolert
 - Muliggjør utbytte av frontends, eventuelt supplerende frontends.
-
 ** Nyttige ting
-
 Snippets om hvordan å sette inn blokker:
 
 | Nøkkelord | Effekt                                |
@@ -90,16 +77,12 @@ Snippets om hvordan å sette inn blokker:
 | I         | #+INCLUDE: line                       |
 
 Mer info på [[http://orgmode.org/manual/Easy-templates.html#Easy-templates][nettsiden til org-mode]].
-
 * Velkommen!
 
-Teodor, /2017-01-16/.
+Teodor, /Januar 2017/.
 
-Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet! Jeg svarer
-på elektronisk post sendt til fornavn punktum etternavn på domenet Google bruker
-til elektronisk post.
-
-Foreløpig er det ikke mye her.
+Hei! Jeg heter Teodor. Trivelig at du vil lese hva jeg har skrevet! Foreløpig er
+det ikke mye her.
 
 Tanker bak å ha en blogg:
 - Tanker går gjennom en prosess. Først er de uferdige, ufullstendige og skjøre.
@@ -132,7 +115,7 @@ Noen temaer som går igjen:
 
 * Grad av kaos
 
-Teodor; /2017-02-21/; under /entropi/, /prosjektledelse/, /formidling/.
+Teodor; /Februar 2017/; under /entropi/, /prosjektledelse/, /formidling/.
 
 Konteksten vår er alltid til en viss grad kaotisk eller ryddig. Hva skjer da med
 tingene rundt oss? Går de mot orden eller mot kaos? Ofte avhengig av person og
@@ -168,8 +151,13 @@ statisk typede:
   skriving av dokumentasjon.
 
 Andre språk gir frihet. Disse er det gjerne raskere å komme igang med, men gir
-en større kneik å klatre når ting begynner å bli stort: "Hva mente jeg egentlig
-her?"
+en større kneik å klatre når ting begynner å bli stort. "Hva mente jeg egentlig
+her?" er noe man /tvinges/ til å besvare tidlig i språk med høye krav til
+konsistens og struktur. Å se inkonsistenser tidlig kan gi muligheten til å endre
+designet tidlig, og således fikse tidlig uten å grave sin egen grav. På den
+andre siden er det stor verdi i frihet når man utvikler en idé. Jo raskere man
+kan gå, jo flere runder feedback kan man få kjørt. Å slippe "avbrekk" er en god
+ting.
 
 - *Python* er fantastisk lett å komme i gang med. Alle filene du skriver kan
   kjøres direkte, og feedbacken fra kjøring kan bli kvikk. Verktøy som
@@ -180,7 +168,7 @@ her?"
 
 * JavaScript -- takk for all fisken
 
-Teodor; /2017-02-21/; under /utvikling/, /programmeringsspråk/,
+Teodor; /Februar 2017/; under /utvikling/, /programmeringsspråk/,
 /funksjonell-programmering/.
 
 Alternativ tittel: Takk til Javascriptutviklerne, som har grepet dagen og gjort
@@ -1118,3 +1106,53 @@ Så hvor ender vi opp? Vi kan lage oss en stige av abstraksjoner:
 4. *Full DSL* som håndterer konfigurasjonen vi vil ha. [[http://tomasp.net/blog/2015/library-layers/][Tomas Petricek]] snakker om
    konseptene bak dette. Se [[https://hackage.haskell.org/package/scotty][Scotty]] (Haskell), [[https://hackage.haskell.org/package/parsec][Parsec]] (Haskell) eller [[https://hackage.haskell.org/package/pandoc][Pandoc]] og
    [[https://hackage.haskell.org/package/pandoc-types][Pandoc Types]] (Haskell) for eksempler på prinsippene i produksjons.
+
+* Timeglassarkitekturen                                            :noexport:
+
+Prinsipper:
+
+- Fleksibel kildeformat
+- Fleksibelt målformat
+- Interoperabilitet.
+
+Vi burde ha stor fleksibilitet i hvordan vi designer innhold. Samtidig bør det
+lett være mulig å "bytte backend"; vi skal ikke knytte oss direkte til en stack.
+Dette kan vi få til ved å ha noe særdeles fleksibelt på toppen, som "kompilerer"
+til noe lettere.
+
+Anvendt på blogging:
+
+- Org mode er et enormt fleksibelt inputformat
+- Eksporter til et mellomformat. Pandoc JSON?
+- Visualiser dette standardiserte dataformatet. Kan ende opp som HTML og PDF.
+
+* Meta meta meta meta meta meta STOPP                              :noexport:
+Teodor, /juni 2017/ under /abstraksjon/.
+
+Du tenker. Nå tenker du på at du tenker. Når du leser denne teksten, tenker du
+da på at du tenker på at du tenker? Hvor mange nivåer oppover kommer du før det
+sier stopp? 2? 3? 4?
+
+Ta et steg til siden. Vurder kritisk: "Hvilket nivå bør du legge deg på?" For
+noen problemer må du gå så langt opp du klarer. For andre problemer er de høyere
+nivåene en distraksjon.
+
+Hva er verdien i å kommunisere hva du ønsker til andre mennesker, relativt til å
+kunne uttrykke supergenerelle sannheter? Supergenerell sannhet kommunisert til
+to personer, eller noe litt mer konkret som tjue er i stand til å forstå?
+
+Om du er i stand til å abstrahere så langt opp at ingen skjønner hva du mener,
+bør du være i stand til å ta steget til siden. Vurder hele stabelen med
+abstraksjoner kritisk. På hvilket abstraksjonsnivå er det optimalt å ligge i
+dag? Ja, det er spennende å tenke så abstrakt som mulig. Ja, /evnen/ til
+abstrakt tenkning kan gjøre utenkelige ting mulig. Det betyr ikke at det alltid
+lønner seg å ligge på grensen til det som er begripelig.
+
+Så! Hypotese. Hva skal du gjøre i dag? I dag skal jeg bruke to timer på å gjøre
+ting som er helt konkrete.
+* Hvor på skalaen skal du legge inn innsatsen?
+Kunnskap ligger på en skala. Hvor spesialisert er kunnskapen? Hvor mye
+forutsetter den? Hvor mange kjenner til hvordan den fungerer? På en side finnes
+informasjon som alle kan forstå seg på, som forutsetter lite. På den andre siden
+er kunnskap kun én person sitter på. Hvilken informasjon skal vi trekke ned? Hva
+skal vi viderebehandle? Hva er viktig nok til at vi skal bruke tid på det?
