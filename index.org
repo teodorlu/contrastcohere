@@ -201,7 +201,7 @@ språket?/
    opplevelse.
 
    Og sekundæreffektene! Både ideologisk og som en plattform. Ideologisk har
-   dere økt den kollektive standarden for GUI-programmering.
+   dere hevet den kollektive standarden for GUI-programmering.
    Meldingsbokssystemer som objekter kan gå og legge seg, og jeg trenger ikke
    akseptere å måtte jobbe med noe sånt igjen. Som plattform og bibliotek har
    dere tatt på dere men grandios arbeidsmengde med de grunnleggende
