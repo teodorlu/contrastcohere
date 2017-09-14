@@ -1,0 +1,9 @@
+* Elm for Kodeklubben Oslo
+Hei!
+
+Den offisielle Elm-siden har litt trøbbel. Da installerer vi ved hjelp av Node:
+
+1. Installer [[https://nodejs.org/en/][Node]]
+2. Installer [[https://www.npmjs.com/package/elm][Elm fra NPM]]
+
+Da har dere hva dere trenger :)
